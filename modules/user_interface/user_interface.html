@@ -1,9 +1,28 @@
 <html>
     <head></head>
     <body>
-        <form action = "modules/user_interface/user_interface.py" method = "post">
+        <!-- <form action = "modules/user_interface/user_interface.py" method = "post"> -->
             <input type="text" id="search" name="query" />
-            <input type = "submit" value = "Submit" />
-        </form>
+            <input type = "button" value = "Search" onclick="search()" />
+        <!-- </form> -->
+        <div id="result">
+
+        </div>
+
+    <script>
+        function search(){
+            var query = document.getElementById("search").value;
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                document.getElementById("result").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("POST", "user_interface.py", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("query=" + query);
+        }
+    </script>
     </body>
 </html>

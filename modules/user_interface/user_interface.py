@@ -1,7 +1,7 @@
 ## Name in diagram: user interface
 
 def test(query):
-    print(query)
+    return query
 
 #class UserInterface:
   #  def __init__(self, query):

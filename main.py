@@ -28,7 +28,13 @@ class Server(BaseHTTPRequestHandler):
             value = parts[1]
             POST.update({key : value})
         
-        UI.test(POST["query"])
+        docs_collection = UI.test(POST["query"]) # later will return the collection of docs
+
+        self.send_response(200)
+        #self.send_header('Content-Type', 'application/json')
+        self.end_headers()
+        self.wfile.write(bytes(docs_collection, 'utf-8'))
+        #self.wfile.write(json_str.encode(encoding='utf_8'))
 
 
 httpd = HTTPServer(('localhost', 8080), Server)
