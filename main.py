@@ -16,11 +16,19 @@ class Server(BaseHTTPRequestHandler):
         self.wfile.write(bytes(file_to_open, 'utf-8'))
 
     def do_POST(self):
+        # maybe there is a better way to get POST without libraries
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length)
-        query = post_data.decode('utf-8').split("=")[1] # Hacky but for now working
+        params = post_data.decode('utf-8').split("&")
+
+        POST = {}
+        for x in params:
+            parts = x.split("=")
+            key = parts[0]
+            value = parts[1]
+            POST.update({key : value})
         
-        UI.test(query)
+        UI.test(POST["query"])
 
 
 httpd = HTTPServer(('localhost', 8080), Server)
