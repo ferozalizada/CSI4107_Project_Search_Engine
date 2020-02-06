@@ -1,1 +1,0 @@
-## Name in diagram: inverted index construction

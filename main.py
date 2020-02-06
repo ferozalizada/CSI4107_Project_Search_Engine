@@ -1,5 +1,5 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
-from modules.user_interface import user_interface as UI
+from modules.user_interface.UserInterface import UserInterface
 
 class Server(BaseHTTPRequestHandler):
 
@@ -28,7 +28,8 @@ class Server(BaseHTTPRequestHandler):
             value = parts[1]
             POST.update({key : value})
         
-        docs_collection = UI.test(POST["query"]) # later will return the collection of docs
+        UI = UserInterface(POST["query"])
+        docs_collection = UI.test() # later will return the collection of docs
 
         self.send_response(200)
         #self.send_header('Content-Type', 'application/json')

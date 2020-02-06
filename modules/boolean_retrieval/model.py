@@ -1,1 +1,0 @@
-## Name in diagram: boolean retrieval model

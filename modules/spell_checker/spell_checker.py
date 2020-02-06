@@ -1,1 +1,0 @@
-## Name in diagram: spelling correction with weighted edit distance
