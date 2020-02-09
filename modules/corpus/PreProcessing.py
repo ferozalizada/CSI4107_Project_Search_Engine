@@ -14,6 +14,7 @@ class PreProcessing:
     def _create_corpus(self):
         docs_dict = {}
         docs = []
+        docs_dict['docs'] = docs
 
         with open(self.collection_path, "rb") as f:
 
@@ -26,11 +27,9 @@ class PreProcessing:
 
                 if(title.find('crédits)') == -1):
                     # french course not found
-                    self._add_doc(soup, docs, course)
+                    self._add_doc(soup, docs_dict['docs'], course)
             
-        docs_dict['docs'] = docs
-        json_docs = json.dumps(docs_dict)
-        self._create_corpus_file(json_docs)
+        self._create_corpus_file(docs_dict)
 
 
     # Add doc to docs array
