@@ -1,7 +1,9 @@
-## Name in diagram: corpus pre-processing
-from bs4 import BeautifulSoup
+# Name in diagram: corpus pre-processing
+from bs4  import BeautifulSoup
+
 import json
 import os.path
+
 
 class PreProcessing:
 
@@ -9,7 +11,6 @@ class PreProcessing:
         self.collection_path = collection_path
         self.corpus_path = corpus_path
         self.doc_id = 0
-
 
     def _create_corpus(self):
         docs_dict = {}
@@ -21,18 +22,18 @@ class PreProcessing:
             contents = f.read().decode('UTF-8')
             soup = BeautifulSoup(contents, 'html.parser')
             courses = soup.find_all('div', class_='courseblock')
-            
+
             for course in courses:
                 title = course.find('p', class_='courseblocktitle').get_text()
 
                 if(title.find('crédits)') == -1):
                     # french course not found
                     self._add_doc(soup, docs_dict['docs'], course)
-            
+
         self._create_corpus_file(docs_dict)
 
-
     # Add doc to docs array
+
     def _add_doc(self, soup, docs, course):
         title = course.find('p', class_='courseblocktitle').get_text()
         description = ""
@@ -43,21 +44,22 @@ class PreProcessing:
             description = ""
 
         self.doc_id += 1
-        docs.append({"docID": self.doc_id, "title": title, "description": description})
-    
+        docs.append({"docID": self.doc_id, "title": title,
+                     "description": description})
 
     def _create_corpus_file(self, json_docs):
         with open(self.corpus_path, 'w') as outfile:
             json.dump(json_docs, outfile)
 
-
     # Create a corpus for a given collection
+
     def generate_corpus(self):
         # Create corpus file if it does not exist
         if os.path.isfile(self.corpus_path) == False:
             self._create_corpus()
 
-
+    def __fun(self):
+        print("hello")
 # https://www.w3schools.com/python/python_file_open.asp
 # https://www.w3schools.com/python/python_json.asp
 # https://www.dataquest.io/blog/web-scraping-tutorial-python/
