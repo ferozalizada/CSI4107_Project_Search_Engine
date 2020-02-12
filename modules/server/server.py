@@ -2,6 +2,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from modules.user_interface.UserInterface import UserInterface
 import json
 
+
 class Server(BaseHTTPRequestHandler):
 
     def do_GET(self):
@@ -27,16 +28,17 @@ class Server(BaseHTTPRequestHandler):
             parts = x.split("=")
             key = parts[0]
             value = parts[1]
-            POST.update({key : value})
-        
+            POST.update({key: value})
+
         UI = UserInterface(POST["query"], POST["model"], POST["collection"])
-        docs_collection = UI.getDocs() # get the collection of docs
+        docs_collection = UI.getDocs()  # get the collection of docs
 
         self.send_response(200)
         self.send_header('Content-Type', 'application/json')
         self.end_headers()
         #self.wfile.write(bytes(docs_collection, 'utf-8'))
         self.wfile.write(json.dumps(docs_collection).encode(encoding='utf_8'))
+
 
 def start_web_server():
     httpd = HTTPServer(('localhost', 8080), Server)
