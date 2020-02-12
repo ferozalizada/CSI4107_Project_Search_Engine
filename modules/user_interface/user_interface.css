@@ -6,7 +6,9 @@ body,
 html {
   margin: 0;
 }
-
+.brand {
+  font-size: 100px;
+}
 #content {
   padding-top: 100px;
   width: 70%;
@@ -50,6 +52,7 @@ html {
 }
 
 #searchBtn {
+  /* padding-left: 0.4em; */
   /* box-shadow: 2px 1px 37px 0px rgba(0, 0, 0, 0.75); */
   border-top-right-radius: 2em;
   border-bottom-right-radius: 2em;
@@ -58,7 +61,7 @@ html {
   -ms-flex-align: center;
   align-items: center;
 
-  padding: 0.25rem 0.75rem;
+  padding-left: 1.7em;
   margin-bottom: 15px;
   font-size: 1rem;
   font-weight: 400;
@@ -143,4 +146,34 @@ html {
 
 input:focus {
   outline: none;
+}
+
+span.brand-letter:nth-child(1) {
+  color: rgb(74, 74, 236);
+}
+span.brand-letter:nth-child(2) {
+  color: rgb(245, 0, 0);
+}
+span.brand-letter:nth-child(3) {
+  color: rgb(255, 167, 2);
+}
+span.brand-letter:nth-child(4) {
+  color: rgb(74, 74, 236);
+}
+span.brand-letter:nth-child(5) {
+  color: rgb(26, 224, 0);
+}
+span.brand-letter:nth-child(6) {
+  color: rgb(245, 0, 0);
+}
+
+h1 span {
+  margin: 0;
+  padding: 0;
+}
+
+h1 span * {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
 }
