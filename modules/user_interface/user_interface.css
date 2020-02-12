@@ -1,0 +1,179 @@
+/*@font-face {
+    font-family: 'Merriweather';
+    src: url('Merriweather_Regular.ttf')  format('truetype');
+  }*/
+body,
+html {
+  margin: 0;
+}
+.brand {
+  font-size: 100px;
+}
+#content {
+  padding-top: 100px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+#title {
+  font-family: "Merriweather", serif;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 8%;
+  margin-bottom: 4%;
+}
+
+#searchArea {
+  border-radius: 2em;
+  width: 55%;
+  margin: 0 auto;
+  box-shadow: 2px 1px 37px 0px rgba(218, 218, 218, 0.75);
+}
+
+#searchInput {
+  /* box-shadow: 2px 1px 37px 0px rgba(0, 0, 0, 0.75); */
+  width: 80%;
+  display: block;
+  border-radius: 2em;
+  height: calc(2em + 0.75rem - 2px);
+  padding: 0.25rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  float: left;
+
+  border-top-right-radius: 0em;
+  border-bottom-right-radius: 0em;
+  font-family: "Muli", sans-serif;
+}
+
+#searchBtn {
+  /* padding-left: 0.4em; */
+  /* box-shadow: 2px 1px 37px 0px rgba(0, 0, 0, 0.75); */
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+  width: 20%;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+
+  padding-left: 1.7em;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  height: calc(2em + 0.75rem - 2px);
+  color: #495057;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-left: none;
+
+  font-family: "Muli", sans-serif;
+}
+
+#searchbtn:hover {
+  background: #bec1c3;
+}
+#searchbtn:active {
+  background: #919497;
+}
+
+#searchOptions {
+  width: 100%;
+  font-family: "Cabin", sans-serif;
+}
+
+#model {
+  float: left;
+  width: 50%;
+}
+
+#collection {
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+
+#cboVSM,
+#cboReuters {
+  margin-left: 10%;
+}
+
+#result {
+  clear: both;
+  margin-top: 8%;
+}
+
+.docs {
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+  padding: 12px 15px;
+  min-height: 52px;
+  margin-bottom: 16px;
+}
+
+.docTitle,
+.score {
+  font-family: "Cabin", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+.docTitle {
+  float: left;
+}
+
+.score {
+  float: right;
+  color: rgb(216, 68, 0);
+  font-size: 18px;
+}
+
+.excerpt {
+  clear: both;
+  font-family: "Muli", sans-serif;
+}
+
+/* https://css-tricks.com/snippets/css/using-font-face/ */
+
+input:focus {
+  outline: none;
+}
+
+span.brand-letter:nth-child(1) {
+  color: rgb(74, 74, 236);
+}
+span.brand-letter:nth-child(2) {
+  color: rgb(245, 0, 0);
+}
+span.brand-letter:nth-child(3) {
+  color: rgb(255, 167, 2);
+}
+span.brand-letter:nth-child(4) {
+  color: rgb(74, 74, 236);
+}
+span.brand-letter:nth-child(5) {
+  color: rgb(26, 224, 0);
+}
+span.brand-letter:nth-child(6) {
+  color: rgb(245, 0, 0);
+}
+
+h1 span {
+  margin: 0;
+  padding: 0;
+}
+
+h1 span * {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather|Muli|Cabin|Cabin:700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/modules/user_interface/user_interface.css" />
+    <title>Booble</title>
+  </head>
+  <body>
+    <div id="content">
+      <h1 id="title" class="brand">
+        <span class="brand-letter">B</span><span class="brand-letter">o</span
+        ><span class="brand-letter">o</span><span class="brand-letter">b</span
+        ><span class="brand-letter">l</span><span class="brand-letter">e</span>
+      </h1>
+
+      <div id="searchArea">
+        <input type="text" id="searchInput" name="query" />
+        <input type="button" id="searchBtn" value="Search" onclick="search()" />
+
+        <div id="searchOptions">
+          <div id="model">
+            <input type="radio" name="model" value="Boolean" checked /> Boolean
+            <input type="radio" name="model" value="VSM" id="cboVSM" /> VSM
+          </div>
+
+          <div id="collection">
+            <input type="radio" name="collection" value="UOCatalog" checked />
+            UofO Catalog
+            <input
+              type="radio"
+              name="collection"
+              value="Reuters"
+              id="cboReuters"
+            />
+            Reuters
+          </div>
+        </div>
+      </div>
+
+      <div id="result">
+        <!-- <div class="docs" id="">
+                    <div class="header">
+                        <div class="docTitle">Test document title</div>
+                        <div class="icon"></div>
+                        <div class="score">Score: 5</div>
+                    </div>
+                    <div class="excerpt">This is the first line of doc description</div>
+                </div> -->
+      </div>
+    </div>
+
+    <script>
+      function search() {
+        var query = document.getElementById("searchInput").value;
+        var model = document.querySelector('input[name="model"]:checked').value;
+        var collection = document.querySelector(
+          'input[name="collection"]:checked'
+        ).value;
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var doc = JSON.parse(this.responseText);
+            var docs =
+              "<div class='docs' id='" +
+              doc["docID"] +
+              "'>" +
+              "<div class='header'>" +
+              "<div class='docTitle'>" +
+              doc["title"] +
+              "</div>" +
+              "<div class='icon'></div>" +
+              "<div class='score'>Score: 1</div>" +
+              "</div>" +
+              "<div class='excerpt'>" +
+              doc["description"] +
+              "</div>" +
+              "</div>";
+
+            document.getElementById("result").innerHTML = docs;
+          }
+        };
+        xhttp.open("POST", "user_interface.py", true);
+        xhttp.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        );
+        xhttp.send(
+          "query=" + query + "&model=" + model + "&collection=" + collection
+        );
+      }
+    </script>
+  </body>
+</html>
