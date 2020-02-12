@@ -91,6 +91,7 @@
     border-radius:3px;
     padding:12px 15px;
     min-height:52px;
+    margin-bottom:16px;
 }
 
 .docTitle, .score {

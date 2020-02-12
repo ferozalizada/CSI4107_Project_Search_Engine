@@ -1,5 +1,6 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from modules.user_interface.UserInterface import UserInterface
+import json
 
 class Server(BaseHTTPRequestHandler):
 
@@ -28,14 +29,14 @@ class Server(BaseHTTPRequestHandler):
             value = parts[1]
             POST.update({key : value})
         
-        UI = UserInterface(POST["query"])
-        docs_collection = UI.test() # later will return the collection of docs
+        UI = UserInterface(POST["query"], POST["model"], POST["collection"])
+        docs_collection = UI.getDocs() # get the collection of docs
 
         self.send_response(200)
-        #self.send_header('Content-Type', 'application/json')
+        self.send_header('Content-Type', 'application/json')
         self.end_headers()
-        self.wfile.write(bytes(docs_collection, 'utf-8'))
-        #self.wfile.write(json_str.encode(encoding='utf_8'))
+        #self.wfile.write(bytes(docs_collection, 'utf-8'))
+        self.wfile.write(json.dumps(docs_collection).encode(encoding='utf_8'))
 
 def start_web_server():
     httpd = HTTPServer(('localhost', 8080), Server)
