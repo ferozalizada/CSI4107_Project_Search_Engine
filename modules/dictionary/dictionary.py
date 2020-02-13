@@ -1,6 +1,15 @@
-## Name in diagram: dictionary building
+# Name in diagram: dictionary building
+
+from stop_words import get_stop_words
+
+
 class Dictionary:
 
-    def __init__(self, arg1, arg2):
-        self.arg1 = arg1
-        self.arg2 = arg2
+    stop_words = None
+
+    def __init__(self):
+        self.stop_words = get_stop_words('en')
+
+        # https: // pypi.org/project/stop-words/
+s = Dictionary()
+print(s.stop_words)
