@@ -1,4 +1,4 @@
-## Name in diagram: boolean retrieval model
+# Name in diagram: boolean retrieval model
 class BooleanModel:
 
     def __init__(self, arg1, arg2):

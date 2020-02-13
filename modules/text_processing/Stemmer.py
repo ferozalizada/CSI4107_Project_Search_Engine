@@ -23,11 +23,11 @@ class Stemmer:
 
 
 # Tests
-s = Stemmer()
+# s = Stemmer()
 
-print('list of stop with one word: \n')
-word = "stopping"
-print(f'\n Stemming:  {word}  =>  ', s.stem_word(word))
+# print('list of stop with one word: \n')
+# word = "stopping"
+# print(f'\n Stemming:  {word}  =>  ', s.stem_word(word))
 
 # print('list of stop with one word: \n')
 # word_list = ["friend", "friendship", "friends", "friendships", "stabil",
