@@ -32,7 +32,7 @@ class SpellCheck:
     def find_weighted_distance(self, word):
         spellchecker(word)
 
-    def edit_distance(self, word):
+    # def edit_distance(self, word):
 
         # word = ENSURE_UNICODE(word).lower(
         # ) if not self._case_sensitive else ENSURE_UNICODE(word)
@@ -46,11 +46,11 @@ class SpellCheck:
         # inserts = [L + c + R for L, R in splits for c in letters]
         # return set(deletes + transposes + replaces + inserts)
 
-        # Test
+
 if __name__ == "__main__":
     spell = SpellCheck()
-    sugg = spell.spell_checker("gaot goat")
+    sugg = spell.spell_checker("thi sis gaot goat")
     print("Spell check are : \n", sugg, "\n")
-    sugg = spell.spell_checker("gaot goat", True)
-    print("suggestions are : \n", sugg, "\n")
+    # sugg = spell.spell_checker("gaot goat", True)
+    # print("suggestions are : \n", sugg, "\n")
 # TODO: edit distance

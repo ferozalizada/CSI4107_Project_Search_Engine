@@ -1,5 +1,5 @@
 # Name in diagram: corpus pre-processing
-from bs4  import BeautifulSoup
+from bs4 import BeautifulSoup
 
 import json
 import os.path
@@ -12,7 +12,7 @@ class PreProcessing:
         self.corpus_path = corpus_path
         self.doc_id = 0
 
-    def _create_corpus(self):
+    def __create_corpus(self):
         docs_dict = {}
         docs = []
         docs_dict['docs'] = docs
@@ -34,7 +34,7 @@ class PreProcessing:
 
     # Add doc to docs array
 
-    def _add_doc(self, soup, docs, course):
+    def __add_doc(self, soup, docs, course):
         title = course.find('p', class_='courseblocktitle').get_text()
         description = ""
 
@@ -47,7 +47,7 @@ class PreProcessing:
         docs.append({"docID": self.doc_id, "title": title,
                      "description": description})
 
-    def _create_corpus_file(self, json_docs):
+    def __create_corpus_file(self, json_docs):
         with open(self.corpus_path, 'w') as outfile:
             json.dump(json_docs, outfile)
 
@@ -58,8 +58,7 @@ class PreProcessing:
         if os.path.isfile(self.corpus_path) == False:
             self._create_corpus()
 
-    def __fun(self):
-        print("hello")
+
 # https://www.w3schools.com/python/python_file_open.asp
 # https://www.w3schools.com/python/python_json.asp
 # https://www.dataquest.io/blog/web-scraping-tutorial-python/
