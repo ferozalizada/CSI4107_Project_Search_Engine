@@ -28,9 +28,9 @@ class PreProcessing:
 
                 if(title.find('crédits)') == -1):
                     # french course not found
-                    self._add_doc(soup, docs_dict['docs'], course)
+                    self.__add_doc(soup, docs_dict['docs'], course)
 
-        self._create_corpus_file(docs_dict)
+        self.__create_corpus_file(docs_dict)
 
     # Add doc to docs array
 
@@ -56,7 +56,7 @@ class PreProcessing:
     def generate_corpus(self):
         # Create corpus file if it does not exist
         if os.path.isfile(self.corpus_path) == False:
-            self._create_corpus()
+            self.__create_corpus()
 
 
 # https://www.w3schools.com/python/python_file_open.asp
