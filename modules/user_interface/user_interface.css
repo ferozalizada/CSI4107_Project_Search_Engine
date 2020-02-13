@@ -2,13 +2,13 @@
     font-family: 'Merriweather';
     src: url('Merriweather_Regular.ttf')  format('truetype');
   }*/
-body,
-html {
+body, html {
   margin: 0;
 }
 .brand {
   font-size: 100px;
 }
+
 #content {
   padding-top: 100px;
   width: 70%;
@@ -100,27 +100,26 @@ html {
   text-align: right;
 }
 
-#cboVSM,
-#cboReuters {
+#cboVSM, #cboReuters {
   margin-left: 10%;
 }
 
 #result {
   clear: both;
   margin-top: 8%;
+  margin-bottom:8%;
 }
 
 .docs {
   width: 100%;
   border: 1px solid #ced4da;
   border-radius: 3px;
-  padding: 12px 15px;
+  padding: 12px 14px 15px 16px;
   min-height: 52px;
   margin-bottom: 16px;
 }
 
-.docTitle,
-.score {
+.docTitle, .score {
   font-family: "Cabin", sans-serif;
   font-weight: bold;
   font-size: 20px;
@@ -129,6 +128,12 @@ html {
 
 .docTitle {
   float: left;
+}
+
+.linkToDoc {
+  float:right;
+  cursor:pointer;
+  margin-left:6px;
 }
 
 .score {

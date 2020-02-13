@@ -19,4 +19,4 @@ class UserInterface:
       dummy = False
 
     corpus = Access("data/uo_courses.json")  # LATER CORPUS WILL BE ACCESSED VIA MODELS (BRM AND VSM)
-    return corpus.get_doc(146)
+    return corpus.get_docs([1, 146, 356, 452])
