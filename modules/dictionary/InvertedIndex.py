@@ -31,7 +31,8 @@ class InvertedIndex:
                 # inverted_index[word].append(doc['docID'])
                 # break
                 indexedword = IndexedWord(doc['docID'], c[word])
-                inverted_index[word].append(json.dumps(indexedword.__dict__))
+                inverted_index[word].append(indexedword.__dict__)
+                print(indexedword.__dict__)
             # print('student ==>>>>', )
             # break
 
