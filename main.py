@@ -1,4 +1,4 @@
-from modules.server.server import start_web_server
+from modules.server.Server import start_web_server
 from modules.corpus.PreProcessing import PreProcessing
 # from modules.corpus.Access import Access
 from modules.boolean_retrieval.BooleanModel import BooleanModel
