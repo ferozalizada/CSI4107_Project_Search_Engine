@@ -6,6 +6,7 @@ from spellchecker import SpellChecker
 class SpellCheck:
 
     def __init__(self):
+#<<<<<<< feature_spell_check
         self.__spell_check = SpellChecker()
 
     def create_dictionary(self, path):
@@ -13,6 +14,15 @@ class SpellCheck:
         self.__spell_check.word_frequency.load_dictionary(path)
 
     """
+#=======
+
+#    def create_dictionary(self, case_sensitive=False):
+        # self.__spell_check = SpellChecker(language=None, self.case_sensitive)
+        # if you have a dictionary...
+        # self.__spell_check.word_frequency.load_dictionary(
+        #     './path-to-my-json-dictionary.json')
+    '''
+#>>>>>>> master
     This class creates an instance of the spell checking library and runs a spell check on the word and 
     the 2 argument is a boolean to turn on the sugestion for candidate words.
     """
@@ -31,6 +41,7 @@ class SpellCheck:
 
     def find_weighted_distance(self, word):
         spellchecker(word)
+
 
     # def edit_distance(self, word):
 
