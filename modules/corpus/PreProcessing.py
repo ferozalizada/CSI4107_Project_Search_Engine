@@ -1,5 +1,5 @@
 # Name in diagram: corpus pre-processing
-from bs4  import BeautifulSoup
+from bs4 import BeautifulSoup
 
 import json
 import os.path
@@ -12,7 +12,7 @@ class PreProcessing:
         self.corpus_path = corpus_path
         self.doc_id = 0
 
-    def _create_corpus(self):
+    def __create_corpus(self):
         docs_dict = {}
         docs = []
         docs_dict['docs'] = docs
@@ -28,26 +28,26 @@ class PreProcessing:
 
                 if(title.find('crédits)') == -1):
                     # french course not found
-                    self._add_doc(soup, docs_dict['docs'], course)
+                    self.__add_doc(soup, docs_dict['docs'], course)
 
-        self._create_corpus_file(docs_dict)
+        self.__create_corpus_file(docs_dict)
 
     # Add doc to docs array
 
-    def _add_doc(self, soup, docs, course):
-        title = course.find('p', class_='courseblocktitle').get_text()
+    def __add_doc(self, soup, docs, course):
+        title = course.find('p', class_='courseblocktitle').get_text().strip()
         description = ""
 
         try:
-            description = course.find('p', class_='courseblockdesc').get_text()
+            description = course.find('p', class_='courseblockdesc').get_text().strip()
         except AttributeError:
             description = ""
 
         self.doc_id += 1
         docs.append({"docID": self.doc_id, "title": title,
-                     "description": description})
+                     "description": description.strip()})
 
-    def _create_corpus_file(self, json_docs):
+    def __create_corpus_file(self, json_docs):
         with open(self.corpus_path, 'w') as outfile:
             json.dump(json_docs, outfile)
 
@@ -56,10 +56,9 @@ class PreProcessing:
     def generate_corpus(self):
         # Create corpus file if it does not exist
         if os.path.isfile(self.corpus_path) == False:
-            self._create_corpus()
+            self.__create_corpus()
 
-    def __fun(self):
-        print("hello")
+
 # https://www.w3schools.com/python/python_file_open.asp
 # https://www.w3schools.com/python/python_json.asp
 # https://www.dataquest.io/blog/web-scraping-tutorial-python/

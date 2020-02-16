@@ -1,3 +1,11 @@
+
+# Name in diagram: boolean retrieval model
+class BooleanModel:
+
+    def __init__(self, arg1, arg2):
+        self.arg1 = arg1
+        self.arg2 = arg2
+
 ## Name in diagram: boolean retrieval model
 from modules.boolean_retrieval.QueryPreProcessing import QueryPreProcessing
 import random 
@@ -124,3 +132,4 @@ class BooleanModel:
     #https://www.geeksforgeeks.org/python-add-new-keys-to-a-dictionary/
     #https://stackoverflow.com/questions/1602934/check-if-a-given-key-already-exists-in-a-dictionary
     #https://www.geeksforgeeks.org/python-list-sort/
+
