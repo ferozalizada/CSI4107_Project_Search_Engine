@@ -61,4 +61,4 @@ def get_indexed_word(dct):
 
 
 # Test
-i = InvertedIndex("data/original_collection.html", 'uo_course1s')
+#i = InvertedIndex("data/original_collection.html", 'uo_course1s')

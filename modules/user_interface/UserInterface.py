@@ -11,12 +11,19 @@ class UserInterface:
     self.collection = collection
 
   def getDocs(self):
-    dummy = True
+    docs = []
 
     if(self.model == "Boolean"):
-      dummy = True
+      q = BooleanModel(self.query)
+    
+      docs = q.search()
+      docs = list( dict.fromkeys(docs) )
+      #print(lst)
     elif(self.model == "VSM"):
-      dummy = False
+      docs = []
 
     corpus = Access("data/uo_courses.json")  # LATER CORPUS WILL BE ACCESSED VIA MODELS (BRM AND VSM)
-    return corpus.get_docs([1, 146, 356, 452])
+    if len(docs) > 0:
+      return corpus.get_docs(docs)
+    else:
+      return []

@@ -6,14 +6,11 @@ from modules.boolean_retrieval.BooleanModel import BooleanModel
 
 def main():
 
-    # start_web_server()  # comment this line to test other modules without lunching web server
-    start_web_server()
-    p = PreProcessing("data/original_collection.html", "data/uo_courses.json")
-    p.generate_corpus()
+    start_web_server()  # comment this line to test other modules without lunching web server
 
-    q = BooleanModel('printer AND_NOT (laser OR ink)')
-    
-    print(q.search())
+    #p = PreProcessing("data/original_collection.html", "data/uo_courses.json")
+    #p.generate_corpus()
+
     #print(q.infixToPostfix('(7 AND 8) OR (3 AND 2)'))
     #print(q.infixToPostfix('(7 + 8) / (3 + 2)'))
     #print(q.postfixEval('7 8 + 3 2 + /'))
