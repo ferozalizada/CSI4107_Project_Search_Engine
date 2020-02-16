@@ -16,11 +16,11 @@ class InvertedIndex:
             # print("Description =>", word['description'])
             # for word, freq in Counter(doc['description'].split()).items():
             for word in doc['description'].split():
-                inverted_index[doc['docID']].append(word)
+                inverted_index[word].append(doc['docID'])
                 # break
-            break
+            # break
 
-        for k,v in inverted_index.items():
-            print(f'DocID : {k}===>', ", ".join(v))
+        for k, v in inverted_index.items():
+            print(f'DocID : {k} ===>', v)
 # Test
 i = InvertedIndex("data/original_collection.html", 'uo_course1s')
