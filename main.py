@@ -5,7 +5,7 @@ from modules.boolean_retrieval.BooleanModel import BooleanModel
 
 
 def main():
-    q = BooleanModel('printer AND (laser OR ink)')
+    q = BooleanModel('printer AND_NOT (laser OR ink)')
     
     print(q.search())
     #print(q.infixToPostfix('(7 AND 8) OR (3 AND 2)'))

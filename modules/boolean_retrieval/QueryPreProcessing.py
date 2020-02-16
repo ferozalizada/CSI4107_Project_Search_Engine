@@ -29,7 +29,6 @@ class QueryPreProcessing:
 
     def postfixEval(self, func, prec, postfixExpr):
         operandStack = []
-        docs = []
         tokenList = postfixExpr.split()
         
         for token in tokenList:
@@ -38,7 +37,7 @@ class QueryPreProcessing:
             else:
                 operand2 = operandStack.pop()
                 operand1 = operandStack.pop()
-                result = func(token,operand1,operand2, docs)
+                result = func(token,operand1,operand2)
                 operandStack.append(result)
         return operandStack.pop()
 
