@@ -85,9 +85,9 @@ class Dictionary:
 
 
 # Test
-dic = Dictionary()
-dic.create_dictionary("data/original_collection.html", 'uo_courses')
-dic.save_dictionary()
+# dic = Dictionary()
+# dic.create_dictionary("data/original_collection.html", 'uo_courses')
+# dic.save_dictionary()
 
 
 
