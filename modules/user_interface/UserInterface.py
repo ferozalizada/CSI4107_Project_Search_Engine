@@ -1,6 +1,6 @@
 ## Name in diagram: user interface
 from modules.boolean_retrieval.BooleanModel import BooleanModel
-from modules.vector_space.VectorSpaceModel import VectorSpaceModel
+# from modules.vector_space.VectorSpaceModel import VectorSpaceModel
 from modules.corpus.Access import Access ######## THIS IS ONLY FOR TEST ########
 
 class UserInterface:
