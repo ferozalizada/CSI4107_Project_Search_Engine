@@ -4,11 +4,11 @@ import re
 
 
 class Tokenizer:
-    def word_tokenizer(self, word):
-        return word.split(" ")
+    def word_tokenizer(self, phrase):
+        return phrase.split(" ")
 
-    def sentence_tokenizer(self, word):
-        return re.compile(r'([A-Za-z0-9][^\.!?]*[\.!?]*)', re.M).findall(word)
+    def sentence_tokenizer(self, phrase):
+        return re.compile(r'([A-Za-z0-9][^\.!?]*[\.!?]*)', re.M).findall(phrase)
 
 
 # token = Tokenizer()

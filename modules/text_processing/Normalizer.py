@@ -6,8 +6,8 @@ import re
 class Normalizer:
     def normalize(self, word):
         # Lower case
-        word = word.strip()
-        word = re.sub('[^A-Za-z]+', '', word).lower()
+        # word = word.strip()
+        word = re.sub('[^A-Za-z0-9]+', '', word).lower()
         # converting numbers into words or removing numbers
         return word
 

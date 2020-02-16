@@ -35,17 +35,17 @@ class PreProcessing:
     # Add doc to docs array
 
     def __add_doc(self, soup, docs, course):
-        title = course.find('p', class_='courseblocktitle').get_text()
+        title = course.find('p', class_='courseblocktitle').get_text().strip()
         description = ""
 
         try:
-            description = course.find('p', class_='courseblockdesc').get_text()
+            description = course.find('p', class_='courseblockdesc').get_text().strip()
         except AttributeError:
             description = ""
 
         self.doc_id += 1
         docs.append({"docID": self.doc_id, "title": title,
-                     "description": description})
+                     "description": description.strip()})
 
     def __create_corpus_file(self, json_docs):
         with open(self.corpus_path, 'w') as outfile:

@@ -8,15 +8,15 @@ from nltk.stem import PorterStemmer
 
 class Lemmatizer:
 
-    __stop_words = None
+    # __stop_words = None
     __stemmer = None
 
     def __init__(self):
         self.__stop_words = stopwords
         self.__stemmer = PorterStemmer()
 
-    def get_stop_words(self):
-        return self.__stop_words
+    # def get_stop_words(self):
+    #     return self.__stop_words
 
     def stem_word(self, word):
         list_of_stemmed_words = []
