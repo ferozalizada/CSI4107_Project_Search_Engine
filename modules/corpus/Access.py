@@ -36,10 +36,10 @@ class Access:
 
             for doc in data['docs']:
                 if(doc['docID'] == doc_id):
-                    return doc
+                    return [doc]
 
         # doc not found
-        return None
+        return []
 
     # test function
 
