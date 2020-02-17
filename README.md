@@ -26,3 +26,7 @@ References and examples are included at the end in the modules.
 1. Install Python 3 and install nltk library using `pip install nltk`
 1. Install BeautifulSoup4 `pip install beautifulsoup4`
 1. Incase of missing `sqlite3.dll` download the file from `https://www.sqlite.org/download.html` copy inside `C:\Users\<user>\Anaconda\DLL`
+
+### Running the Project
+
+To run the project simply run `main.py` from the root folder and goto `http://localhost:8080/` on your browser.
