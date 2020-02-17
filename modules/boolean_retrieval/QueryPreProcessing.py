@@ -1,3 +1,6 @@
+##### CODE ON THIS FILE BASED ON THE FOLLOWING SOURCE #####
+# https://runestone.academy/runestone/books/published/pythonds/BasicDS/InfixPrefixandPostfixExpressions.html #
+
 class QueryPreProcessing:
 
     def infixToPostfix(self, prec, infixexpr):
@@ -40,6 +43,3 @@ class QueryPreProcessing:
                 result = func(token,operand1,operand2)
                 operandStack.append(result)
         return operandStack.pop()
-
-# https://runestone.academy/runestone/books/published/pythonds/BasicDS/InfixPrefixandPostfixExpressions.html
-# https://chortle.ccsu.edu/Java5/Notes/chap40/ch40_16.html

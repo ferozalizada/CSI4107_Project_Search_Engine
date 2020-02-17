@@ -19,16 +19,16 @@ class BooleanModel:
         q = QueryPreProcessing()
         result = []
         qlen = len(self.query.split())
-        #print(qlen)
+
         if qlen == 1:
             result = self.__searchInIndex("", self.query, "")
         elif qlen > 1:
             postfix_expr = q.infixToPostfix(prec, self.query)
-            #print(postfix_expr)
             result = q.postfixEval(self.__searchInIndex, prec, postfix_expr)
         
         return result
 
+    ##### Algorithm based on the lectures on Boolean Retrieval #####
     def __searchInIndex(self, op, op1, op2):
         docs1 = []
         docs2 = []
@@ -37,12 +37,12 @@ class BooleanModel:
         if type(op1) == list:
             docs1 = op1
         elif op1 in self.inverted_index:
-            docs1 = self.inverted_index[op1] #self.invertedIndex[op1]
+            docs1 = self.inverted_index[op1]
 
         if type(op2) == list:
             docs2 = op2
         elif op2 in self.inverted_index:
-            docs2 = self.inverted_index[op2] #self.invertedIndex[op2]
+            docs2 = self.inverted_index[op2]
 
         len1 = len(docs1)
         len2 = len(docs2)
@@ -150,8 +150,3 @@ class BooleanModel:
             inverted_index = json.load(json_file)
 
         return inverted_index
-
-    #https://www.geeksforgeeks.org/python-add-new-keys-to-a-dictionary/
-    #https://stackoverflow.com/questions/1602934/check-if-a-given-key-already-exists-in-a-dictionary
-    #https://www.geeksforgeeks.org/python-list-sort/
-
