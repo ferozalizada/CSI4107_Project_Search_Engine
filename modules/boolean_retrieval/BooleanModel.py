@@ -46,16 +46,29 @@ class BooleanModel:
 
         len1 = len(docs1)
         len2 = len(docs2)
-
+       
         if(op == "AND"):
             i = 0
             j = 0
             while len1 > 0 and len2 > 0 and (i < len1 and j < len2):
-                if docs1[i]["doc_id"] == docs2[j]["doc_id"]:
-                    docs.append(docs1[i]["doc_id"]) # append docs appearing in both term indexes
+                docID_1 = 0
+                docID_2 = 0
+
+                if type(docs1[i]) == int:
+                    docID_1 = docs1[i]
+                else:
+                    docID_1 = docs1[i]["doc_id"]
+
+                if type(docs2[j]) == int:
+                    docID_2 = docs2[j]
+                else:
+                    docID_2 = docs2[j]["doc_id"]
+
+                if docID_1 == docID_2:
+                    docs.append(docID_1) # append docs appearing in both term indexes
                     i += 1
                     j += 1
-                elif docs1[i]["doc_id"] < docs2[j]["doc_id"]:
+                elif docID_1 < docID_2:
                     i += 1
                 else:
                     j += 1
@@ -64,34 +77,60 @@ class BooleanModel:
             i = 0
             j = 0
             while len1 > 0 and len2 > 0 and (i < len1 and j < len2):
-                if docs1[i]["doc_id"] == docs2[j]["doc_id"]:
-                    docs.append(docs1[i]["doc_id"]) # append docs appearing in both term indexes
+                docID_1 = 0
+                docID_2 = 0
+
+                if type(docs1[i]) == int:
+                    docID_1 = docs1[i]
+                else:
+                    docID_1 = docs1[i]["doc_id"]
+
+                if type(docs2[j]) == int:
+                    docID_2 = docs2[j]
+                else:
+                    docID_2 = docs2[j]["doc_id"]
+
+                if docID_1 == docID_2:
+                    docs.append(docID_1) # append docs appearing in both term indexes
                     i += 1
                     j += 1
-                elif docs1[i]["doc_id"] < docs2[j]["doc_id"]:
-                    docs.append(docs1[i]["doc_id"]) # append docs appearing in both term indexes
+                elif docID_1 < docID_2:
+                    docs.append(docID_1) # append docs appearing in both term indexes
                     i += 1
                 else:
-                    docs.append(docs2[j]["doc_id"]) # append docs appearing in both term indexes
+                    docs.append(docID_2) # append docs appearing in both term indexes
                     j += 1
             
             while i < len1:
-                docs.append(docs1[i]["doc_id"])
+                docs.append(docID_1)
                 i += 1
 
             while j < len2:
-                docs.append(docs2[j]["doc_id"])
+                docs.append(docID_2)
                 j += 1
 
         elif(op == "AND_NOT"):
             i = 0
             j = 0
             while len1 > 0 and len2 > 0 and (i < len1 and j < len2):
-                if docs1[i]["doc_id"] == docs2[j]["doc_id"]:
+                docID_1 = 0
+                docID_2 = 0
+
+                if type(docs1[i]) == int:
+                    docID_1 = docs1[i]
+                else:
+                    docID_1 = docs1[i]["doc_id"]
+
+                if type(docs2[j]) == int:
+                    docID_2 = docs2[j]
+                else:
+                    docID_2 = docs2[j]["doc_id"]
+
+                if docID_1 == docID_2:
                     i += 1
                     j += 1
-                elif docs1[i]["doc_id"] < docs2[j]["doc_id"]:
-                    docs.append(docs1[i]["doc_id"]) # append docs appearing in docs1 but not docs2
+                elif docID_1 < docID_2:
+                    docs.append(docID_1) # append docs appearing in docs1 but not docs2
                     i += 1
                 else:
                     j += 1
