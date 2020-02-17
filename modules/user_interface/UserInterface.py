@@ -6,6 +6,10 @@ from modules.text_processing.Stopword import *
 from modules.text_processing.Stemmer import *
 from modules.text_processing.Normalizer import *
 
+# from modules.vector_space.VectorSpaceModel import VectorSpaceModel
+from modules.corpus.Access import Access ######## THIS IS ONLY FOR TEST ########
+
+
 class UserInterface:
 
   def __init__(self, query, model, collection):

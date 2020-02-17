@@ -31,17 +31,20 @@ class InvertedIndex:
                 # inverted_index[word].append(doc['docID'])
                 # break
                 indexedword = IndexedWord(doc['docID'], c[word])
+
                 inverted_index[word].append(indexedword.__dict__)
-                print(indexedword.__dict__)
-            # print('student ==>>>>', )
-            # break
+                # print(indexedword.__dict__)
+
 
         script_dir = Path(__file__).parent.parent.parent
-        print(script_dir)
         inverted_index_json = os.path.join(script_dir, 'data/inverted_index.json')
 
-        with open(inverted_index_json, 'w') as outfile:
-            json.dump(inverted_index, outfile, ensure_ascii=False, indent=4)
+        if not os.path.isfile(inverted_index_json):
+            with open(inverted_index_json, 'w') as outfile:
+                json.dump(inverted_index, outfile, indent=4)
+        else:
+            print("cant create index json")
+
         # for k, v in inverted_index.items():
         #     print(f'Words : {k} ===> docID: ', v)
 
@@ -50,15 +53,13 @@ class IndexedWord:
         self.doc_id = doc_id
         self.frequency = frequency
 
-    def __contains__(self, key):
-        return key == self.doc_id
-
     def __repr__(self):
         return str(self.__dict__)
 
-def get_indexed_word(dct):
-    return IndexedWord(dct['doc_id'], dct["frequency"])
+    def __contains__(self, key):
+        return key == self.doc_id
 
 
 # Test
-#i = InvertedIndex("data/original_collection.html", 'uo_course1s')
+# i = InvertedIndex("data/original_collection.html", 'uo_course1s')
+
