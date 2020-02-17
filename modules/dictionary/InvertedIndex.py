@@ -37,12 +37,11 @@ class InvertedIndex:
 
 
         script_dir = Path(__file__).parent.parent.parent
-        # print("++++++",script_dir)
         inverted_index_json = os.path.join(script_dir, 'data/inverted_index.json')
 
         if not os.path.isfile(inverted_index_json):
             with open(inverted_index_json, 'w') as outfile:
-                json.dump(inverted_index, outfile, ensure_ascii=False, indent=4)
+                json.dump(inverted_index, outfile, indent=4)
         else:
             print("cant create index json")
 
@@ -54,14 +53,11 @@ class IndexedWord:
         self.doc_id = doc_id
         self.frequency = frequency
 
-    def __contains__(self, key):
-        return key == self.doc_id
-
     def __repr__(self):
         return str(self.__dict__)
 
-def get_indexed_word(dct):
-    return IndexedWord(dct['doc_id'], dct["frequency"])
+    def __contains__(self, key):
+        return key == self.doc_id
 
 
 # Test
