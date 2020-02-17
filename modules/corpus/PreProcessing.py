@@ -4,6 +4,9 @@ from bs4 import BeautifulSoup
 import json
 import os.path
 
+##### CODE IN THIS FILE BASED ON THE FOLLOWING SOURCES #####
+# https://www.dataquest.io/blog/web-scraping-tutorial-python/ #
+# https://stackabuse.com/reading-and-writing-json-to-a-file-in-python/ #
 
 class PreProcessing:
 
@@ -33,7 +36,6 @@ class PreProcessing:
         self.__create_corpus_file(docs_dict)
 
     # Add doc to docs array
-
     def __add_doc(self, soup, docs, course):
         title = course.find('p', class_='courseblocktitle').get_text().strip()
         description = ""
@@ -52,17 +54,7 @@ class PreProcessing:
             json.dump(json_docs, outfile)
 
     # Create a corpus for a given collection
-
     def generate_corpus(self):
         # Create corpus file if it does not exist
         if os.path.isfile(self.corpus_path) == False:
             self.__create_corpus()
-
-
-# https://www.w3schools.com/python/python_file_open.asp
-# https://www.w3schools.com/python/python_json.asp
-# https://www.dataquest.io/blog/web-scraping-tutorial-python/
-# https://stackoverflow.com/questions/10971033/backporting-python-3-openencoding-utf-8-to-python-2
-# https://www.w3schools.com/python/python_arrays.asp
-# https://stackabuse.com/reading-and-writing-json-to-a-file-in-python/
-# https://linuxize.com/post/python-check-if-file-exists/

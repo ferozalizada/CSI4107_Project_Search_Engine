@@ -62,3 +62,4 @@ class IndexedWord:
 
 # Test
 # i = InvertedIndex("data/original_collection.html", 'uo_course1s')
+
