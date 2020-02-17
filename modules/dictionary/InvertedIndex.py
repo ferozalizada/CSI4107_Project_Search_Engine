@@ -37,7 +37,6 @@ class InvertedIndex:
 
 
         script_dir = Path(__file__).parent.parent.parent
-        # print("++++++",script_dir)
         inverted_index_json = os.path.join(script_dir, 'data/inverted_index.json')
 
         if not os.path.isfile(inverted_index_json):
