@@ -8,16 +8,19 @@ from pathlib import Path
 from modules.text_processing.Tokenizer import Tokenizer
 import math
 
+
 class VectorSpaceModel:
     def __init__(self):
         root_dir = Path(__file__).parent.parent.parent
 
-        inverted_index_json = os.path.join(root_dir, "data/inverted_index.json")
-        corpus_json = os.path.join(root_dir, "data/uo_courses_preprocessed.json")
+        inverted_index_json = os.path.join(
+            root_dir, "data/inverted_index.json")
+        corpus_json = os.path.join(
+            root_dir, "data/uo_courses_preprocessed.json")
 
-        with open(inverted_index_json) as inv_index:
+        with open(inverted_index_json, 'r', encoding="utf-8") as inv_index:
             self.inverted_index = json.load(inv_index)
-        with open(corpus_json) as corpus_file:
+        with open(corpus_json, 'r', encoding="utf-8") as corpus_file:
             self.corpus = json.load(corpus_file)['docs']
 
         print(len(self.inverted_index))
@@ -29,12 +32,9 @@ class VectorSpaceModel:
         # tf_idf = compute_tf_idf(self.inverted_index, compute_idf(self.set_of_docs, self.inverted_index))
         # print(tf_idf)
 
+
 def compute_idf(set_of_docs, inverted_index):
     return {item: math.log10(len(set_of_docs) / len(doc_list)) for item, doc_list in inverted_index.items()}
-
-
-
-
 
 
 # test

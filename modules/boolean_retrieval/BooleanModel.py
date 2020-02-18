@@ -1,7 +1,8 @@
-## Name in diagram: boolean retrieval model
+# Name in diagram: boolean retrieval model
 from modules.boolean_retrieval.QueryPreProcessing import QueryPreProcessing
-import random 
+import random
 import json
+
 
 class BooleanModel:
 
@@ -25,7 +26,7 @@ class BooleanModel:
         elif qlen > 1:
             postfix_expr = q.infixToPostfix(prec, self.query)
             result = q.postfixEval(self.__searchInIndex, prec, postfix_expr)
-        
+
         return result
 
     ##### Algorithm based on the lectures on Boolean Retrieval #####
@@ -33,7 +34,7 @@ class BooleanModel:
         docs1 = []
         docs2 = []
         docs = []
-        
+
         if type(op1) == list:
             docs1 = op1
         elif op1 in self.inverted_index:
@@ -46,7 +47,7 @@ class BooleanModel:
 
         len1 = len(docs1)
         len2 = len(docs2)
-       
+
         if(op == "AND"):
             i = 0
             j = 0
@@ -65,7 +66,8 @@ class BooleanModel:
                     docID_2 = docs2[j]["doc_id"]
 
                 if docID_1 == docID_2:
-                    docs.append(docID_1) # append docs appearing in both term indexes
+                    # append docs appearing in both term indexes
+                    docs.append(docID_1)
                     i += 1
                     j += 1
                 elif docID_1 < docID_2:
@@ -91,16 +93,19 @@ class BooleanModel:
                     docID_2 = docs2[j]["doc_id"]
 
                 if docID_1 == docID_2:
-                    docs.append(docID_1) # append docs appearing in both term indexes
+                    # append docs appearing in both term indexes
+                    docs.append(docID_1)
                     i += 1
                     j += 1
                 elif docID_1 < docID_2:
-                    docs.append(docID_1) # append docs appearing in both term indexes
+                    # append docs appearing in both term indexes
+                    docs.append(docID_1)
                     i += 1
                 else:
-                    docs.append(docID_2) # append docs appearing in both term indexes
+                    # append docs appearing in both term indexes
+                    docs.append(docID_2)
                     j += 1
-            
+
             while i < len1:
                 docs.append(docID_1)
                 i += 1
@@ -130,23 +135,25 @@ class BooleanModel:
                     i += 1
                     j += 1
                 elif docID_1 < docID_2:
-                    docs.append(docID_1) # append docs appearing in docs1 but not docs2
+                    # append docs appearing in docs1 but not docs2
+                    docs.append(docID_1)
                     i += 1
                 else:
                     j += 1
 
         elif op == "":
             i = 0
-            while len1 > 0 and i < len1: 
-                docs.append(docs1[i]["doc_id"]) # append docs appearing in docs1
+            while len1 > 0 and i < len1:
+                # append docs appearing in docs1
+                docs.append(docs1[i]["doc_id"])
                 i += 1
-        
+
         return docs
 
     def __generateIndex(self):
         inverted_index = {}
 
-        with open("data/inverted_index.json") as json_file:
+        with open("data/inverted_index.json", encoding="utf-8") as json_file:
             inverted_index = json.load(json_file)
 
         return inverted_index

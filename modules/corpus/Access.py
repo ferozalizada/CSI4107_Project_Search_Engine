@@ -9,7 +9,7 @@ class Access:
         self.__length = 0
         self.__json_file = open(self.corpus_path)
         self.__json_data = []
-    
+
     # return the list of docs from a corpus
     def get_docs(self, docs_id):
         docs = []
@@ -17,7 +17,7 @@ class Access:
         # assumption: the docs_id are already in order in increasing order
         i = 0
 
-        with open(self.corpus_path) as json_file:
+        with open(self.corpus_path, 'r+', encoding="utf-8") as json_file:
             data = json.load(json_file)
 
             for doc in data['docs']:
@@ -35,7 +35,7 @@ class Access:
 
     # return one doc found by id
     def get_doc(self, doc_id):
-        with open(self.corpus_path) as json_file:
+        with open(self.corpus_path, 'r+', encoding="utf-8") as json_file:
             data = json.load(json_file)
 
             for doc in data['docs']:
@@ -50,11 +50,14 @@ class Access:
 def get_item_id(doc):
     return doc['docID']
 
+
 def get_item_title(doc):
     return doc['title']
 
-def get_item_description( doc):
+
+def get_item_description(doc):
     return doc['description']
+
 
 def _print_docs(docs):
     for doc in docs:

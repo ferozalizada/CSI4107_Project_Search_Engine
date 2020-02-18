@@ -8,6 +8,7 @@ import os.path
 # https://www.dataquest.io/blog/web-scraping-tutorial-python/ #
 # https://stackabuse.com/reading-and-writing-json-to-a-file-in-python/ #
 
+
 class PreProcessing:
 
     def __init__(self, collection_path, corpus_path):
@@ -20,7 +21,7 @@ class PreProcessing:
         docs = []
         docs_dict['docs'] = docs
 
-        with open(self.collection_path, "rb") as f:
+        with open(self.collection_path, "rb", encoding="utf-8") as f:
 
             contents = f.read().decode('UTF-8')
             soup = BeautifulSoup(contents, 'html.parser')
@@ -41,7 +42,8 @@ class PreProcessing:
         description = ""
 
         try:
-            description = course.find('p', class_='courseblockdesc').get_text().strip()
+            description = course.find(
+                'p', class_='courseblockdesc').get_text().strip()
         except AttributeError:
             description = ""
 
@@ -50,7 +52,7 @@ class PreProcessing:
                      "description": description.strip()})
 
     def __create_corpus_file(self, json_docs):
-        with open(self.corpus_path, 'w') as outfile:
+        with open(self.corpus_path, 'w', encoding="utf-8") as outfile:
             json.dump(json_docs, outfile)
 
     # Create a corpus for a given collection
