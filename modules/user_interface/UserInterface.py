@@ -22,11 +22,13 @@ class UserInterface:
 
     def getDocs(self):
         docs = []
+        scores = []
 
         if(self.model == "Boolean"):
             self.query = self.__cleanQuery()
             q = BooleanModel(self.query)
 
+            # print(q)
             docs = q.search()
             docs = list(dict.fromkeys(docs))
 
@@ -34,12 +36,22 @@ class UserInterface:
             docs = []
             self.query = self.__cleanQuery()
             vsm = VectorSpaceModel().retrieve(self.query)
-
-            print(vsm)
+            scores = [i[1] for i in vsm]
+            docs = [i[0] for i in vsm]
 
         corpus = Access("data/uo_courses.json")
+
         if len(docs) > 0:
-            return corpus.get_docs(docs)
+            json_docs = []
+            for i, item in enumerate(corpus.get_docs(docs)):
+                if self.model == "VSM":
+                    item['score'] = scores[i]
+                    json_docs.append(item)
+                else:
+                    item['score'] = 1
+                    json_docs.append(item)
+            print(json_docs)
+            return json_docs
         else:
             return []
 
