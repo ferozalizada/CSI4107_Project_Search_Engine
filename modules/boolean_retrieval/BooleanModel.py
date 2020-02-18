@@ -153,7 +153,7 @@ class BooleanModel:
     def __generateIndex(self):
         inverted_index = {}
 
-        with open("data/inverted_index.json", encoding="utf-8") as json_file:
+        with open("data/inverted_index.json", "r+", encoding="utf-8") as json_file:
             inverted_index = json.load(json_file)
 
         return inverted_index
