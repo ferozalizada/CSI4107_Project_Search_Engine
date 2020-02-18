@@ -40,7 +40,8 @@ class UserInterface:
             # docs = vsm.search()
             # docs = list(dict.fromkeys(docs))
             docs = [i[0] for i in vsm]
-            print(docs)
+            # docs.sort()
+            # print(docs)
 
         corpus = Access("data/uo_courses.json")
         if len(docs) > 0:
