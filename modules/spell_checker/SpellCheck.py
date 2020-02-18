@@ -18,7 +18,7 @@ class SpellCheck:
         dictionary_file = os.path.join(root_dir, "data/dictionary_short.json")
         self.__spell_check = SpellChecker(language=None, case_sensitive=False)
 
-        with open(dictionary_file) as json_file:
+        with open(dictionary_file, 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
         # data2 ={data['original'] + data['stopword'] + data['processed'] + data['stemmed'] + data['normalized']}
         # print(data2)

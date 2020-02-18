@@ -31,8 +31,13 @@ class UserInterface:
       docs = list( dict.fromkeys(docs) )
       
     elif(self.model == "VSM"):
-      docs = []
+      self.query = self.__cleanQuery()
+      # docs = []
 
+      vsm = VectorSpaceModel().retrieve(self.query)
+      print(vsm)
+      # docs = vsm.search()
+      docs = list(dict.fromkeys(docs))
     corpus = Access("data/uo_courses.json")
     if len(docs) > 0:
       return corpus.get_docs(docs)
