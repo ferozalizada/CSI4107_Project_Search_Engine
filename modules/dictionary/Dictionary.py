@@ -64,24 +64,24 @@ class Dictionary:
                 doc['title'].lower())
             description_tokens = self.__tokenizer.word_tokenizer(
                 doc['description'].lower())
-            self.__dictionary['original'] |= set(title_tokens)
-            self.__dictionary['original'] |= set(description_tokens)
+            # self.__dictionary['original'] |= set(title_tokens)
+            # self.__dictionary['original'] |= set(description_tokens)
 
             # Stemming
             if stemming:
                 title_tokens = self.__stemmer.stem_word(title_tokens)
                 description_tokens = self.__stemmer.stem_word(
                     description_tokens)
-                self.__dictionary['stemmed'] |= set(title_tokens.copy())
-                self.__dictionary['stemmed'] |= set(description_tokens)
+                # self.__dictionary['stemmed'] |= set(title_tokens.copy())
+                # self.__dictionary['stemmed'] |= set(description_tokens)
             # Normalization
             if normalization:
                 title_tokens = map(self.__normalizer.normalize, title_tokens)
                 description_tokens = map(
                     self.__normalizer.normalize, description_tokens)
 
-                self.__dictionary['normalized'] |= set(title_tokens)
-                self.__dictionary['normalized'] |= set(description_tokens)
+                # self.__dictionary['normalized'] |= set(title_tokens)
+                # self.__dictionary['normalized'] |= set(description_tokens)
 
             # StopWords removal
             if stopwords:
@@ -93,11 +93,11 @@ class Dictionary:
                     description_tokens = [
                         c for c in description_tokens if c not in word]
 
-                    self.__dictionary['stopword'] |= set(title_tokens)
-                    self.__dictionary['stopword'] |= set(description_tokens)
-
-                    self.__dictionary['processed'] |= set(title_tokens)
-                    self.__dictionary['processed'] |= set(description_tokens)
+                    # self.__dictionary['stopword'] |= set(title_tokens)
+                    # self.__dictionary['stopword'] |= set(description_tokens)
+                    #
+                    # self.__dictionary['processed'] |= set(title_tokens)
+                    # self.__dictionary['processed'] |= set(description_tokens)
 
                     self.__corpus_file[i]['description'] = self.__corpus_file[i]['description'].replace(
                         self.__corpus_file[i]['description'], " ".join(description_tokens))
