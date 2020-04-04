@@ -21,7 +21,6 @@ class Dictionary:
         self.__corpus_access = None
         self.__corpus_file = []
         self.__input_path = ""
-        # create_dictionary(self, file_path, output_file, stopwords=True, stemming=True, normalization=True)
         self.__dictionary = {
             'original': set(),
             'stopword': set(),
@@ -34,10 +33,8 @@ class Dictionary:
         print('creating dictionary')
 
         script_dir = Path(__file__).parent.parent.parent
-        # file_path = "data/original_collection.html"
         html_file = os.path.join(script_dir, file_path)
         corpus_file = os.path.join(Path(html_file).parent, output_file+".json")
-        # print(corpus_file)
         self.__input_path = Path(html_file).parent
 
         if os.path.isfile(html_file):
@@ -56,32 +53,32 @@ class Dictionary:
         self.__corpus_file = self.__corpus_access.get_docs_list()
 
         # 1. delete stop words
-        i = 0
-        for doc in self.__corpus_file:
+        # i = 0
+        for i, doc in enumerate(self.__corpus_file):
 
             # Tokenize and lower()
             title_tokens = self.__tokenizer.word_tokenizer(
                 doc['title'].lower())
             description_tokens = self.__tokenizer.word_tokenizer(
                 doc['description'].lower())
-            # self.__dictionary['original'] |= set(title_tokens)
-            # self.__dictionary['original'] |= set(description_tokens)
+            self.__dictionary['original'] |= set(title_tokens)
+            self.__dictionary['original'] |= set(description_tokens)
 
             # Stemming
             if stemming:
                 title_tokens = self.__stemmer.stem_word(title_tokens)
                 description_tokens = self.__stemmer.stem_word(
                     description_tokens)
-                # self.__dictionary['stemmed'] |= set(title_tokens.copy())
-                # self.__dictionary['stemmed'] |= set(description_tokens)
+                self.__dictionary['stemmed'] |= set(title_tokens.copy())
+                self.__dictionary['stemmed'] |= set(description_tokens)
             # Normalization
             if normalization:
                 title_tokens = map(self.__normalizer.normalize, title_tokens)
                 description_tokens = map(
                     self.__normalizer.normalize, description_tokens)
 
-                # self.__dictionary['normalized'] |= set(title_tokens)
-                # self.__dictionary['normalized'] |= set(description_tokens)
+                self.__dictionary['normalized'] |= set(title_tokens)
+                self.__dictionary['normalized'] |= set(description_tokens)
 
             # StopWords removal
             if stopwords:
@@ -89,22 +86,22 @@ class Dictionary:
 
                 for word in self.__stopword:
 
+                    self.__dictionary['stopword'] |= set(title_tokens)
+                    # print(title_tokens)
+                    self.__dictionary['stopword'] |= set(description_tokens)
+
                     title_tokens = [e for e in title_tokens if e not in word]
                     description_tokens = [
                         c for c in description_tokens if c not in word]
 
-                    # self.__dictionary['stopword'] |= set(title_tokens)
-                    # self.__dictionary['stopword'] |= set(description_tokens)
-                    #
-                    # self.__dictionary['processed'] |= set(title_tokens)
-                    # self.__dictionary['processed'] |= set(description_tokens)
+                    self.__dictionary['processed'] |= set(title_tokens)
+                    self.__dictionary['processed'] |= set(description_tokens)
 
                     self.__corpus_file[i]['description'] = self.__corpus_file[i]['description'].replace(
                         self.__corpus_file[i]['description'], " ".join(description_tokens))
                     self.__corpus_file[i]['title'] = self.__corpus_file[i]['title'].replace(
                         self.__corpus_file[i]['title'], " ".join(title_tokens))
 
-            i += 1
         with open(os.path.join(self.__input_path, "dictionary_short.json"), 'w', encoding="utf-8") as f:
             lists_words = {k: list(v) for (k, v) in self.__dictionary.items()}
             json.dump(lists_words, f, ensure_ascii=False, indent=4)
@@ -116,9 +113,9 @@ class Dictionary:
 
 
 # Test
-# dic = Dictionary()
-# dic.create_dictionary("data/original_collection.html", 'uo_courses')
-# dic.save_dictionary()
+dic = Dictionary()
+dic.create_dictionary("data/original_collection.html", 'uo_courses')
+dic.save_dictionary()
 
 
 # https://github.com/ArmandSyah/CSI4107-Search-Engine-Project/blob/master/dictionary/dictionary.py
