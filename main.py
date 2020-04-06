@@ -11,9 +11,6 @@ def main():
     #q = BooleanModel('printer AND_NOT (laser OR ink)')
 
 def generateIndexes():
-    #p = PreProcessing("data/original_collection.html", "data/uo_courses.json")
-    #p.generate_corpus()
-
-    i = InvertedIndex("data/original_collection.html", 'uo_courses')
+    InvertedIndex("data/original_collection.html", 'uo_courses')
 
 main()

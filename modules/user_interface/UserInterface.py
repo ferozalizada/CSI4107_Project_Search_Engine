@@ -22,7 +22,9 @@ class UserInterface:
     scores = []
 
     if(self.model == "Boolean"):
+        print(self.query)
         self.query = self.__cleanQuery()
+        print(self.query)
         q = BooleanModel(self.query)
 
         # print(q)
