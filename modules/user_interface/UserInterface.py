@@ -47,7 +47,7 @@ class UserInterface:
             else:
                 item['score'] = 1
                 json_docs.append(item)
-        print(json_docs)
+        #print(json_docs)
         return json_docs
     else:
         return []
