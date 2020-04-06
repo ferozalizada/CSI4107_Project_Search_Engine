@@ -5,10 +5,15 @@ from modules.boolean_retrieval.BooleanModel import BooleanModel
 from modules.dictionary.InvertedIndex import InvertedIndex
 
 def main():
-    # p = PreProcessing("data/original_collection.html", "data/uo_courses.json")
-    # p.generate_corpus()
+    generateIndexes()
     #i = InvertedIndex("data/original_collection.html", 'uo_courses')
     start_web_server()  # comment this line to test other modules without lunching web server
     #q = BooleanModel('printer AND_NOT (laser OR ink)')
+
+def generateIndexes():
+    #p = PreProcessing("data/original_collection.html", "data/uo_courses.json")
+    #p.generate_corpus()
+
+    i = InvertedIndex("data/original_collection.html", 'uo_courses')
 
 main()

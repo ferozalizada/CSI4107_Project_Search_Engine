@@ -21,8 +21,8 @@ class PreProcessing:
         docs = []
         docs_dict['docs'] = docs
 
-        with open(self.collection_path, "rb", encoding="utf-8") as f:
-
+        #with open(self.collection_path, "rb", encoding="utf-8") as f:
+        with open(self.collection_path, "rb") as f:
             contents = f.read().decode('UTF-8')
             soup = BeautifulSoup(contents, 'html.parser')
             courses = soup.find_all('div', class_='courseblock')
