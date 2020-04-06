@@ -43,7 +43,7 @@ class InvertedIndex:
             with open(inverted_index_json, 'w', encoding="utf-8") as outfile:
                 json.dump(inverted_index, outfile, indent=4)
         else:
-            print("cant create index json")
+            print("Inverted index already exists")
 
         # for k, v in inverted_index.items():
         #     print(f'Words : {k} ===> docID: ', v)
