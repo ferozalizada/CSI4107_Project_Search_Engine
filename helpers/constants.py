@@ -1,0 +1,2 @@
+UO_CATALOG_COLLECTION = "uo_catalog"
+REUTERS_COLLECTION = "reuters"

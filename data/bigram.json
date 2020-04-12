@@ -1,0 +1,560 @@
+{
+    "business": {
+        "3": 8,
+        "intelligence": 7
+    },
+    "management": {
+        "3": 27,
+        "1.5": 7
+    },
+    "course": {
+        "mat": 14,
+        "includes": 7
+    },
+    "student": {
+        "will": 7
+    },
+    "will": {
+        "focus": 5,
+        "vary": 5
+    },
+    "case": {
+        "studies": 6
+    },
+    "students": {
+        "will": 12,
+        "must": 7
+    },
+    "corporate": {
+        "finance": 7,
+        "social": 5
+    },
+    "social": {
+        "psychology": 14,
+        "development": 6
+    },
+    "strategic": {
+        "management": 7
+    },
+    "accounting": {
+        "3": 8
+    },
+    "information": {
+        "systems": 19,
+        "technology": 7
+    },
+    "decision": {
+        "making": 8
+    },
+    "problem": {
+        "solving": 9
+    },
+    "marketing": {
+        "3": 8
+    },
+    "analytics": {
+        "3": 6
+    },
+    "statistical": {
+        "software": 5
+    },
+    "statistics": {
+        "3": 10
+    },
+    "data": {
+        "mining": 9,
+        "analysis": 7
+    },
+    "central": {
+        "limit": 6
+    },
+    "probability": {
+        "theory": 6
+    },
+    "hands-on": {
+        "experience": 8
+    },
+    "topics": {
+        "include": 12,
+        "chosen": 8,
+        "may": 6
+    },
+    "linear": {
+        "algebra": 5
+    },
+    "methods": {
+        "3": 7
+    },
+    "development": {
+        "3": 7
+    },
+    "behaviour": {
+        "3": 6
+    },
+    "human": {
+        "resource": 8,
+        "resources": 6
+    },
+    "analysis": {
+        "3": 20
+    },
+    "capital": {
+        "budgeting": 5
+    },
+    "finance": {
+        "3": 7
+    },
+    "theory": {
+        "3": 23
+    },
+    "theoretical": {
+        "models": 5
+    },
+    "systems": {
+        "3": 14
+    },
+    "advanced": {
+        "topics": 13
+    },
+    "stage": {
+        "coop": 10
+    },
+    "": {
+        "3": 94,
+        "comprehensive": 15,
+        "co-op": 10,
+        "directed": 10,
+        "seminar": 9,
+        "practical": 8,
+        "1-99": 7,
+        "chaque": 7,
+        "preparation": 6,
+        "international": 6,
+        "ns": 5,
+        "practicum": 5,
+        "research": 5,
+        "psychology": 5,
+        "selected": 5
+    },
+    "co-op": {
+        "work": 10
+    },
+    "work": {
+        "term": 12
+    },
+    "term": {
+        "3": 6
+    },
+    "3": {
+        "cr\u00e9dits": 94
+    },
+    "supply": {
+        "chain": 11
+    },
+    "design": {
+        "3": 5
+    },
+    "big": {
+        "data": 7
+    },
+    "intelligence": {
+        "3": 5
+    },
+    "international": {
+        "financial": 7
+    },
+    "behavioural": {
+        "neuroscience": 5
+    },
+    "special": {
+        "topics": 17
+    },
+    "research": {
+        "3": 16,
+        "project": 12,
+        "methods": 8
+    },
+    "applied": {
+        "mathematics": 6
+    },
+    "ii": {
+        "3": 31,
+        "1.5": 5
+    },
+    "portfolio": {
+        "management": 7
+    },
+    "program": {
+        "evaluation": 7
+    },
+    "fundamental": {
+        "theorem": 9
+    },
+    "electronic": {
+        "commerce": 5
+    },
+    "public": {
+        "sector": 5
+    },
+    "computing": {
+        "3": 10
+    },
+    "particular": {
+        "topic": 5
+    },
+    "\u00e0": {
+        "la": 29,
+        "1": 7,
+        "comp": 7,
+        "l'\u00e9tude": 5,
+        "math": 5
+    },
+    "la": {
+        "carleton": 12,
+        "direction": 7,
+        "recherche": 6,
+        "psychologie": 6
+    },
+    "aux": {
+        "\u00e9tudiants": 5
+    },
+    "et": {
+        "est": 14,
+        "de": 13,
+        "la": 10,
+        "des": 10,
+        "les": 9,
+        "mat": 8
+    },
+    "les": {
+        "professeurs": 14,
+        "\u00e9tudiants": 6,
+        "techniques": 5
+    },
+    "de": {
+        "la": 42,
+        "recherche": 29,
+        "cas": 7,
+        "projet": 7,
+        "30": 7,
+        "travail": 6,
+        "gestion": 6,
+        "son": 6
+    },
+    "par": {
+        "les": 17,
+        "le": 10,
+        "un": 6
+    },
+    "formation": {
+        "pratique": 7
+    },
+    "dans": {
+        "l'ann\u00e9e": 14,
+        "le": 7,
+        "les": 5
+    },
+    "des": {
+        "sujets": 5,
+        "besoins": 5
+    },
+    "qui": {
+        "enseignent": 14
+    },
+    "est": {
+        "l'examen": 14,
+        "corrig\u00e9": 14,
+        "\u00e9quivalent": 12
+    },
+    "un": {
+        "rapport": 6,
+        "projet": 5
+    },
+    "le": {
+        "contenu": 16
+    },
+    "recherche": {
+        "en": 12
+    },
+    "en": {
+        "psychologie": 14,
+        "gestion": 6,
+        "recherche": 5,
+        "math\u00e9matiques": 5
+    },
+    "projets": {
+        "de": 5
+    },
+    "gestion": {
+        "de": 10
+    },
+    "examen": {
+        "de": 16,
+        "porte": 14,
+        "est": 13
+    },
+    "sur": {
+        "le": 23,
+        "les": 10,
+        "des": 8,
+        "la": 5
+    },
+    "project": {
+        "management": 11
+    },
+    "courses": {
+        "csi": 5
+    },
+    "critical": {
+        "analysis": 7,
+        "evaluation": 6,
+        "review": 6
+    },
+    "learning": {
+        "3": 6
+    },
+    "real": {
+        "analysis": 6,
+        "estate": 5
+    },
+    "practicum": {
+        "1-99": 5
+    },
+    "selected": {
+        "topics": 32
+    },
+    "psychological": {
+        "sciences": 6,
+        "services": 6
+    },
+    "current": {
+        "research": 35
+    },
+    "professional": {
+        "skills": 6
+    },
+    "teach": {
+        "mat": 14
+    },
+    "optimization": {
+        "3": 9
+    },
+    "computer": {
+        "science": 6,
+        "systems": 5
+    },
+    "ou": {
+        "ns": 23
+    },
+    "d'un": {
+        "projet": 8
+    },
+    "ce": {
+        "cours": 15
+    },
+    "heures": {
+        "\u00e9quivaut": 7
+    },
+    "satisfaisant": {
+        "ou": 22
+    },
+    "ns": {
+        "non": 28,
+        "not": 22
+    },
+    "cours": {
+        "est": 16,
+        "et": 14,
+        "mat": 7
+    },
+    "1": {
+        "de": 13
+    },
+    "du": {
+        "cours": 28,
+        "comportement": 6,
+        "secteur": 5
+    },
+    "partie": {
+        "1": 12
+    },
+    "written": {
+        "paper": 5
+    },
+    "paper": {
+        "will": 5
+    },
+    "m\u00e9thodes": {
+        "de": 5
+    },
+    "projet": {
+        "de": 12,
+        "en": 5
+    },
+    "lectures": {
+        "dirig\u00e9es": 6
+    },
+    "directed": {
+        "readings": 9,
+        "studies": 5
+    },
+    "sous": {
+        "la": 11
+    },
+    "direction": {
+        "d'un": 7
+    },
+    "contemporary": {
+        "issues": 7,
+        "psychology": 6
+    },
+    "comprehensive": {
+        "examination": 5
+    },
+    "engineering": {
+        "3": 5
+    },
+    "mathematical": {
+        "statistics": 6
+    },
+    "analyse": {
+        "critique": 5
+    },
+    "not\u00e9": {
+        "s": 21
+    },
+    "graded": {
+        "s": 21
+    },
+    "psychology": {
+        "3": 40,
+        "content": 5,
+        "presented": 5
+    },
+    "format": {
+        "will": 5
+    },
+    "vary": {
+        "depending": 5
+    },
+    "cognitive": {
+        "processes": 8
+    },
+    "modalities": {
+        "approved": 5
+    },
+    "part": {
+        "2": 16,
+        "1": 15
+    },
+    "r\u00e9daction": {
+        "d'un": 5
+    },
+    "th\u00e8mes": {
+        "choisis": 5
+    },
+    "choisis": {
+        "en": 5
+    },
+    "contenu": {
+        "du": 13
+    },
+    "1-99": {
+        "cr\u00e9dit": 7
+    },
+    "chaque": {
+        "p\u00e9riode": 7
+    },
+    "p\u00e9riode": {
+        "de": 8
+    },
+    "30": {
+        "heures": 7,
+        "hour": 7
+    },
+    "\u00e9quivaut": {
+        "\u00e0": 7
+    },
+    "hour": {
+        "period": 7
+    },
+    "critique": {
+        "des": 5
+    },
+    "professeurs": {
+        "qui": 13
+    },
+    "experimental": {
+        "techniques": 8
+    },
+    "s\u00e9minaires": {
+        "en": 5
+    },
+    "porte": {
+        "sur": 15
+    },
+    "algebra": {
+        "3": 9
+    },
+    "partial": {
+        "differential": 6
+    },
+    "discrete": {
+        "mathematics": 5
+    },
+    "differential": {
+        "equations": 13
+    },
+    "geometry": {
+        "3": 7
+    },
+    "mathematics": {
+        "3": 12
+    },
+    "year": {
+        "graded": 14
+    },
+    "ordinary": {
+        "differential": 5
+    },
+    "categorical": {
+        "data": 5
+    },
+    "science": {
+        "3": 6
+    },
+    "machine": {
+        "learning": 7
+    },
+    "maximum": {
+        "likelihood": 5
+    },
+    "\u00e9quivalent": {
+        "\u00e0": 12
+    },
+    "exam": {
+        "covers": 14
+    },
+    "cet": {
+        "examen": 27
+    },
+    "l'examen": {
+        "final": 14
+    },
+    "final": {
+        "exam": 14,
+        "du": 12
+    },
+    "corrig\u00e9": {
+        "par": 14
+    },
+    "enseignent": {
+        "mat": 10
+    },
+    "acad\u00e9mique": {
+        "not\u00e9": 13
+    },
+    "comp": {
+        "5900": 5
+    }
+}

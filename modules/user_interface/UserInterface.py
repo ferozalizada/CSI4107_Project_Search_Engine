@@ -5,7 +5,7 @@ from modules.corpus.Access import Access
 from modules.text_processing.Stopword import *
 from modules.text_processing.Stemmer import *
 from modules.text_processing.Normalizer import *
-
+from helpers import constants
 
 class UserInterface:
 
@@ -22,10 +22,10 @@ class UserInterface:
     scores = []
 
     if(self.model == "Boolean"):
-        print(self.query)
+        #print(self.query)
         self.query = self.__cleanQuery()
-        print(self.query)
-        q = BooleanModel(self.query)
+        #print(self.query)
+        q = BooleanModel(self.query, self.collection)
 
         # print(q)
         docs = q.search()
@@ -34,11 +34,15 @@ class UserInterface:
     elif(self.model == "VSM"):
         docs = []
         self.query = self.__cleanQuery()
-        vsm = VectorSpaceModel().retrieve(self.query)
+        vsm = VectorSpaceModel(self.collection).retrieve(self.query)
         scores = [i[1] for i in vsm]
         docs = [i[0] for i in vsm]
 
-    corpus = Access("data/uo_courses.json")
+    corpus = []
+    if self.collection == constants.UO_CATALOG_COLLECTION:
+        corpus = Access("data/uo_courses.json")
+    elif self.collection == constants.REUTERS_COLLECTION:
+        corpus = Access("data/reuters/reuters.json")
 
     if len(docs) > 0:
         json_docs = []

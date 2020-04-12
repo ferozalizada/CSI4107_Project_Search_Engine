@@ -84,6 +84,24 @@ body, html {
   background: #919497;
 }
 
+#suggestions {
+  width: 100%; 
+  position:absolute; 
+  font-family: "Muli", sans-serif;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  cursor:default;
+  display:none;
+}
+
+.suggestion {
+  padding:10px;
+}
+
+.suggestion:hover {
+  background-color:#d2d8df;
+}
+
 #searchOptions {
   width: 100%;
   font-family: "Cabin", sans-serif;
@@ -145,6 +163,13 @@ body, html {
 .excerpt {
   clear: both;
   font-family: "Muli", sans-serif;
+}
+
+.docRelevant {
+  width:100%;
+  text-align:right;
+  margin-top:5px;
+  font-family: "Cabin", sans-serif;
 }
 
 /* https://css-tricks.com/snippets/css/using-font-face/ */

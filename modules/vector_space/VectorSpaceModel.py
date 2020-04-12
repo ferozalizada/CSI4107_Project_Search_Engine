@@ -7,23 +7,33 @@ from pathlib import Path
 from modules.text_processing.Tokenizer import Tokenizer
 from modules.text_processing.Tokenizer import Tokenizer
 import math
+from helpers import constants
 
 
 class VectorSpaceModel:
-    def __init__(self):
+    def __init__(self, collection):
         root_dir = Path(__file__).parent.parent.parent
 
-        inverted_index_json = os.path.join(
-            root_dir, "data/inverted_index.json")
-        corpus_json = os.path.join(
-            root_dir, "data/uo_courses_preprocessed.json")
+        inverted_index_json = ""
+        corpus_json = ""
+
+        if collection == constants.UO_CATALOG_COLLECTION:
+            inverted_index_json = os.path.join(
+                root_dir, "data/inverted_index.json")
+            corpus_json = os.path.join(
+                root_dir, "data/uo_courses_preprocessed.json")
+        elif collection == constants.REUTERS_COLLECTION:
+            inverted_index_json = os.path.join(
+                root_dir, "data/reuters/inverted_index.json")
+            corpus_json = os.path.join(
+                root_dir, "data/reuters/reuters.json")
 
         with open(inverted_index_json, 'r', encoding='utf-8') as inv_index:
             self.inverted_index = json.load(inv_index)
         with open(corpus_json, 'r', encoding='utf-8') as corpus_file:
             self.corpus = json.load(corpus_file)['docs']
 
-        print(len(self.inverted_index))
+        #print(len(self.inverted_index))
         self.set_of_docs = {document['docID'] for document in self.corpus}
         number_of_docs = calculate_idf(self.set_of_docs, self.inverted_index)
         self.tokenizer = Tokenizer()

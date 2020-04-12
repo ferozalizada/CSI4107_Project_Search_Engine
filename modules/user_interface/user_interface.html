@@ -16,9 +16,11 @@
         ><span class="brand-letter">l</span><span class="brand-letter">e</span>
       </h1>
 
-      <div id="searchArea">
+      <div id="searchArea" style="position:relative;">
         <input type="text" id="searchInput" name="query" />
         <input type="button" id="searchBtn" value="Search" onclick="search()" />
+        
+        <div id="suggestions"></div>
 
         <div id="searchOptions">
           <div id="model">
@@ -27,8 +29,8 @@
           </div>
 
           <div id="collection">
-            <input type="radio" name="collection" value="UOCatalog" checked /> UofO Catalog
-            <input type="radio" name="collection" value="Reuters" id="cboReuters" /> Reuters
+            <input type="radio" name="collection" value="uo_catalog" checked /> UofO Catalog
+            <input type="radio" name="collection" value="reuters" id="cboReuters" /> Reuters
           </div>
         </div>
       </div>

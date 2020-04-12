@@ -2,12 +2,14 @@
 from modules.boolean_retrieval.QueryPreProcessing import QueryPreProcessing
 import random
 import json
+from helpers import constants
 
 
 class BooleanModel:
 
-    def __init__(self, query):
+    def __init__(self, query, collection):
         self.query = query
+        self.collection = collection
 
     def search(self):
         prec = {}
@@ -17,6 +19,15 @@ class BooleanModel:
         prec["("] = 1
 
         self.inverted_index = self.__generateIndex()
+
+        #dct = list(self.inverted_index)
+        #for key in dct: print(key)
+
+        """dct = list(self.inverted_index)
+        for key in dct: 
+            if key.isnumeric() == True:
+                print(key)"""
+
         q = QueryPreProcessing()
         result = []
         qlen = len(self.query.split())
@@ -152,8 +163,14 @@ class BooleanModel:
 
     def __generateIndex(self):
         inverted_index = {}
+        file_path = ""
 
-        with open("data/inverted_index.json", "r+", encoding="utf-8") as json_file:
+        if self.collection == constants.UO_CATALOG_COLLECTION:
+            file_path = "data/inverted_index.json"
+        elif self.collection == constants.REUTERS_COLLECTION:
+            file_path = "data/reuters/inverted_index.json"
+
+        with open(file_path, "r+", encoding="utf-8") as json_file:
             inverted_index = json.load(json_file)
 
         return inverted_index

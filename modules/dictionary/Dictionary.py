@@ -9,10 +9,11 @@ import os
 from pathlib import Path
 from _collections import defaultdict
 import json
+from helpers import constants
 
 
 class Dictionary:
-    def __init__(self):
+    def __init__(self, collection):
         self.__stopword = None
         self.__normalizer = Normalizer()
         self.__stemmer = Stemmer()
@@ -21,6 +22,7 @@ class Dictionary:
         self.__corpus_access = None
         self.__corpus_file = []
         self.__input_path = ""
+        self.__collection = collection
         # create_dictionary(self, file_path, output_file, stopwords=True, stemming=True, normalization=True)
         self.__dictionary = {
             'original': set(),
@@ -35,22 +37,35 @@ class Dictionary:
 
         script_dir = Path(__file__).parent.parent.parent
         # file_path = "data/original_collection.html"
-        html_file = os.path.join(script_dir, file_path)
-        corpus_file = os.path.join(Path(html_file).parent, output_file+".json")
+        html_file = ""
+        corpus_file = ""
         # print(corpus_file)
-        self.__input_path = Path(html_file).parent
 
-        if os.path.isfile(html_file):
-            print("HTML file exists")
-        else:
-            print("HTML file does not exists")
+        if self.__collection == constants.UO_CATALOG_COLLECTION:
+            html_file = os.path.join(script_dir, file_path)
+            self.__input_path = Path(html_file).parent
+            corpus_file = os.path.join(Path(html_file).parent, output_file+".json")
+
+            if os.path.isfile(html_file):
+                print("HTML file exists")
+            else:
+                print("HTML file does not exists")
+        elif self.__collection == constants.REUTERS_COLLECTION:
+            self.__input_path = Path(file_path[0]).parent.parent
+            corpus_file = os.path.join(self.__input_path, output_file+".json")
+
+            for i in range(len(file_path)):
+                file_path[i] = os.path.join(script_dir, file_path[i])
 
         # Generate the preprocessed json file
         if os.path.isfile(corpus_file):
             print("Corpus already exists file exists")
         else:
             print("Creating corpus file")
-            PreProcessing(html_file, corpus_file).generate_corpus()
+            if self.__collection == constants.UO_CATALOG_COLLECTION:
+                PreProcessing(self.__collection, html_file, corpus_file).generate_corpus()
+            elif self.__collection == constants.REUTERS_COLLECTION:
+                PreProcessing(self.__collection, file_path, corpus_file).generate_corpus()
 
         self.__corpus_access = Access(corpus_file)
         self.__corpus_file = self.__corpus_access.get_docs_list()
