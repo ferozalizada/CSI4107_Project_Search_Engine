@@ -7,7 +7,6 @@ class Access:
     def __init__(self, corpus_path):
         self.corpus_path = corpus_path
         self.__length = 0
-        self.__json_file = open(self.corpus_path)
         self.__json_data = []
 
     # return the list of docs from a corpus
@@ -31,6 +30,7 @@ class Access:
         return docs
 
     def get_docs_list(self):
+        self.__json_file = open(self.corpus_path)
         self.__json_data = json.load(self.__json_file)['docs']
         return self.__json_data
 
