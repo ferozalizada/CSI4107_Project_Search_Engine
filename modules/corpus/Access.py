@@ -20,12 +20,13 @@ class Access:
         with open(self.corpus_path, 'r+', encoding="utf-8") as json_file:
             data = json.load(json_file)
 
-            for doc in data['docs']:
-                if(doc['docID'] == docs_id[i]):
-                    # add doc found to list of docs
-                    docs.append(doc)
-                    if(i < (len(docs_id) - 1)):
-                        i += 1
+            for item in docs_id:
+                for doc in data['docs']:
+                    if(doc['docID'] == item):
+                        # add doc found to list of docs
+                        docs.append(doc)
+                        if(i < (len(docs_id) - 1)):
+                            i += 1
 
         return docs
 

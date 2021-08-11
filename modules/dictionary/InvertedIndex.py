@@ -16,20 +16,11 @@ class InvertedIndex:
         inverted_index = defaultdict(list)
 
         for doc in self.__dictionary:
-            # print(doc)
-            # print("DocID =>",word['docID'])
-            # print("Title =>", word['title'])
-            # print("Description =>", word['description'])
-            # for word, freq in Counter(doc['description'].split()).items():
-            set_of_words = doc['description'].split()
+            set_of_words = doc['description'].split() + doc['title'].split()
+
             c = None
             for word in set_of_words:
-                #  docid: word freq
-                # this is the frequency of the word
-                c = Counter(doc['description'].split())
-                # print(c[word])
-                # inverted_index[word].append(doc['docID'])
-                # break
+                c = Counter(set_of_words)
                 indexedword = IndexedWord(doc['docID'], c[word])
 
                 inverted_index[word].append(indexedword.__dict__)
@@ -45,9 +36,6 @@ class InvertedIndex:
         else:
             print("cant create index json")
 
-        # for k, v in inverted_index.items():
-        #     print(f'Words : {k} ===> docID: ', v)
-
 
 class IndexedWord:
     def __init__(self, doc_id, frequency):
@@ -62,4 +50,4 @@ class IndexedWord:
 
 
 # Test
-i = InvertedIndex("data/original_collection.html", 'uo_courses')
+i = InvertedIndex("data/original_collection.html", 'uo_courses_preprocessed')
