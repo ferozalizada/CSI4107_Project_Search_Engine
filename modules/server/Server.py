@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
+import http.server
 import json
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import os
 from modules.bigram_model.QueryCompletion import QueryCompletion
 from modules.user_interface.UserInterface import UserInterface
 
+from socketserver import ThreadingMixIn
 
 ##### CODE ON THIS FILE BASED ON THE FOLLOWING SOURCES #####
 # https://stackoverflow.com/questions/39801718/how-to-run-a-http-server-which-serves-a-specific-path #
@@ -71,10 +73,13 @@ class Server(BaseHTTPRequestHandler):
         self.end_headers()
         #self.wfile.write(bytes(docs_collection, 'utf-8'))
         self.wfile.write(json.dumps(resultOutput).encode(encoding='utf_8'))
+class ThreadHTTPServer(ThreadingMixIn, http.server.HTTPServer):
+    "This is an HTTPServer that supports thread-based concurrency."
 
 def start_web_server():
-    port = int(os.environ.get('PORT', 8080))
-    httpd = HTTPServer(('localhost', port), Server)
+    server_address = ('', int(os.environ.get('PORT', '8086')))
+    httpd = ThreadHTTPServer(server_address, Server)
 
-    print("Web server started on port 8080...")
+    print(f"Web server started on port {server_address}...")
     httpd.serve_forever()
+
