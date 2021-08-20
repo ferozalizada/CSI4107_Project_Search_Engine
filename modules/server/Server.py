@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import json
 from http.server import HTTPServer, BaseHTTPRequestHandler
-
+import os
 from modules.bigram_model.QueryCompletion import QueryCompletion
 from modules.user_interface.UserInterface import UserInterface
 
@@ -73,6 +73,8 @@ class Server(BaseHTTPRequestHandler):
         self.wfile.write(json.dumps(resultOutput).encode(encoding='utf_8'))
 
 def start_web_server():
-    httpd = HTTPServer(('localhost', 8080), Server)
+    port = int(os.environ.get('PORT', 33507))
+    httpd = HTTPServer(('localhost', port), Server)
+
     print("Web server started on port 8080...")
     httpd.serve_forever()
