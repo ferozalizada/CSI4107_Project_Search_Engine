@@ -8,10 +8,10 @@ import os
 
 
 def main():
-    root_dir = os.path.join(os.path.abspath(os.sep), "nltk_data")
-
-    nltk.download('wordnet', download_dir=root_dir)
-    nltk.download('stopwords', download_dir=root_dir)
+    # root_dir = os.path.join(os.path.abspath(os.sep), "nltk_data")
+    #
+    # nltk.download('wordnet', download_dir=root_dir)
+    # nltk.download('stopwords', download_dir=root_dir)
     #BigramModel(constants.REUTERS_COLLECTION)
     #generateIndexes()
     docs_id = []
