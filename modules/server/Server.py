@@ -77,7 +77,7 @@ class ThreadHTTPServer(ThreadingMixIn, http.server.HTTPServer):
     "This is an HTTPServer that supports thread-based concurrency."
 
 def start_web_server():
-    server_address = ('', int(os.environ.get('PORT', '8086')))
+    server_address = ('', int(os.environ.get('PORT', '80')))
     httpd = ThreadHTTPServer(server_address, Server)
 
     print(f"Web server started on port {server_address}...")
