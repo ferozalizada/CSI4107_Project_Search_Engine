@@ -9,6 +9,7 @@ from modules.text_processing.Lemmatizer import *
 from modules.text_processing.Normalizer import *
 from modules.text_processing.Stemmer import *
 from modules.text_processing.Tokenizer import *
+from modules.text_processing.Stopword import *
 
 
 class Dictionary:
