@@ -73,7 +73,7 @@ class Server(BaseHTTPRequestHandler):
         self.wfile.write(json.dumps(resultOutput).encode(encoding='utf_8'))
 
 def start_web_server():
-    port = int(os.environ.get('PORT', 80))
+    port = int(os.environ.get('PORT', 8080))
     httpd = HTTPServer(('localhost', port), Server)
 
     print("Web server started on port 8080...")

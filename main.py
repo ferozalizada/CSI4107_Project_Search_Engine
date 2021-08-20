@@ -14,21 +14,21 @@ def main():
     # nltk.download('stopwords', download_dir=root_dir)
     #BigramModel(constants.REUTERS_COLLECTION)
     #generateIndexes()
-    docs_id = []
-    docs_relevant = []
-    docs_nonrelevant = []
+    # docs_id = []
+    # docs_relevant = []
+    # docs_nonrelevant = []
 
-    for i in range(1, 100):
-        docs_id.append(i)
-        if i < 11:
-            docs_relevant.append(i)
-        else:
-            docs_nonrelevant.append(i)
+    # for i in range(1, 100):
+    #     docs_id.append(i)
+    #     if i < 11:
+    #         docs_relevant.append(i)
+    #     else:
+    #         docs_nonrelevant.append(i)
 
-    print(len(docs_id))
-    print("start")
-    rf = RocchioFeedback(constants.REUTERS_COLLECTION, ["security"], docs_id, docs_relevant, docs_nonrelevant)
-    rf.run()
+    # print(len(docs_id))
+    # print("start")
+    # rf = RocchioFeedback(constants.REUTERS_COLLECTION, ["security"], docs_id, docs_relevant, docs_nonrelevant)
+    # rf.run()
     start_web_server()  # comment this line to test other modules without lunching web server
     #q = BooleanModel('printer AND_NOT (laser OR ink)')
 
