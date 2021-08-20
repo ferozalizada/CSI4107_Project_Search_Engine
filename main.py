@@ -34,5 +34,5 @@ def main():
 
 def generateIndexes():
     InvertedIndex(constants.UO_CATALOG_COLLECTION, "data/original_collection.html", 'uo_courses')
-
-main()
+if __name__ == '__main__':
+    main()

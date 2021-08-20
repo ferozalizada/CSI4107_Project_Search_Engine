@@ -1,1 +1,1 @@
-web: gunicorn main:main --timeout 1000 -b :80
+web: gunicorn main:main --timeout 0 -b :80
