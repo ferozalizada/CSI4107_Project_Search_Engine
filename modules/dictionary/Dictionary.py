@@ -1,15 +1,14 @@
-from modules.corpus.PreProcessing import PreProcessing
-from modules.corpus.Access import *
-from modules.text_processing.Tokenizer import *
-from modules.text_processing.Stopword import *
-from modules.text_processing.Stemmer import *
-from modules.text_processing.Normalizer import *
-from modules.text_processing.Lemmatizer import *
+import json
 import os
 from pathlib import Path
-from _collections import defaultdict
-import json
+
 from helpers import constants
+from modules.corpus.Access import *
+from modules.corpus.PreProcessing import PreProcessing
+from modules.text_processing.Lemmatizer import *
+from modules.text_processing.Normalizer import *
+from modules.text_processing.Stemmer import *
+from modules.text_processing.Tokenizer import *
 
 
 class Dictionary:

@@ -1,8 +1,10 @@
 import json
 import os
 from pathlib import Path
+
 from helpers import constants
 from modules.text_processing.Stopword import Stopword
+
 
 # code inspired from https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-language-model-nlp-python-code/
 # https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value

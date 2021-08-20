@@ -1,11 +1,9 @@
-from modules.server.Server import start_web_server
-from modules.corpus.PreProcessing import PreProcessing
-# from modules.corpus.Access import Access
-from modules.boolean_retrieval.BooleanModel import BooleanModel
-from modules.dictionary.InvertedIndex import InvertedIndex
-from modules.bigram_model.BigramModel import BigramModel
-from modules.rocchio_feedback.RocchioFeedback import RocchioFeedback
 from helpers import constants
+# from modules.corpus.Access import Access
+from modules.dictionary.InvertedIndex import InvertedIndex
+from modules.rocchio_feedback.RocchioFeedback import RocchioFeedback
+from modules.server.Server import start_web_server
+
 
 def main():
     #BigramModel(constants.REUTERS_COLLECTION)
@@ -25,7 +23,7 @@ def main():
     print("start")
     rf = RocchioFeedback(constants.REUTERS_COLLECTION, ["security"], docs_id, docs_relevant, docs_nonrelevant)
     rf.run()
-    #start_web_server()  # comment this line to test other modules without lunching web server
+    start_web_server()  # comment this line to test other modules without lunching web server
     #q = BooleanModel('printer AND_NOT (laser OR ink)')
 
 def generateIndexes():

@@ -1,11 +1,12 @@
 # Name in diagram: inverted index construction
-from modules.dictionary.Dictionary import Dictionary
-from collections import defaultdict
-from collections import Counter
 import json
 import os
+from collections import Counter
+from collections import defaultdict
 from pathlib import Path
+
 from helpers import constants
+from modules.dictionary.Dictionary import Dictionary
 
 
 class InvertedIndex:

@@ -1,13 +1,11 @@
 import json
-import os
-
-from collections import defaultdict
-from collections import namedtuple
-from pathlib import Path
-from modules.text_processing.Tokenizer import Tokenizer
-from modules.text_processing.Tokenizer import Tokenizer
 import math
+import os
+from collections import defaultdict
+from pathlib import Path
+
 from helpers import constants
+from modules.text_processing.Tokenizer import Tokenizer
 
 
 class VectorSpaceModel:

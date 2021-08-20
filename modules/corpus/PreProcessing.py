@@ -1,10 +1,11 @@
 # Name in diagram: corpus pre-processing
-from bs4 import BeautifulSoup
-
 import json
 import os.path
 
+from bs4 import BeautifulSoup
+
 from helpers import constants
+
 
 ##### CODE IN THIS FILE BASED ON THE FOLLOWING SOURCES #####
 # https://www.dataquest.io/blog/web-scraping-tutorial-python/ #

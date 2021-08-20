@@ -1,8 +1,8 @@
 # Name in diagram: boolean retrieval model
-from modules.boolean_retrieval.QueryPreProcessing import QueryPreProcessing
-import random
 import json
+
 from helpers import constants
+from modules.boolean_retrieval.QueryPreProcessing import QueryPreProcessing
 
 
 class BooleanModel:

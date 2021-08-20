@@ -1,10 +1,11 @@
 import math
-from collections import Counter
-import json
 import os
+from collections import Counter
 from pathlib import Path
-from modules.corpus.Access import Access
+
 from helpers import constants
+from modules.corpus.Access import Access
+
 
 # alpha, beta and gamma values and algorithm based on lectures on Rocchio Feedback
 class RocchioFeedback:

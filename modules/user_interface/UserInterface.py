@@ -1,11 +1,12 @@
 # Name in diagram: user interface
-from modules.boolean_retrieval.BooleanModel import BooleanModel
-from modules.vector_space.VectorSpaceModel import VectorSpaceModel
-from modules.corpus.Access import Access
-from modules.text_processing.Stopword import *
-from modules.text_processing.Stemmer import *
-from modules.text_processing.Normalizer import *
 from helpers import constants
+from modules.boolean_retrieval.BooleanModel import BooleanModel
+from modules.corpus.Access import Access
+from modules.text_processing.Normalizer import *
+from modules.text_processing.Stemmer import *
+from modules.text_processing.Stopword import *
+from modules.vector_space.VectorSpaceModel import VectorSpaceModel
+
 
 class UserInterface:
 

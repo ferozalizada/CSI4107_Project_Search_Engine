@@ -1,7 +1,8 @@
 # Name in diagram: spelling correction with weighted edit distance
+import json
 import os
 from pathlib import Path
-import json
+
 from spellchecker import SpellChecker
 
 

@@ -1,10 +1,12 @@
 import json
 import os
 from pathlib import Path
-from modules.text_processing.Stopword import Stopword
-from modules.text_processing.Stemmer import Stemmer
-from modules.text_processing.Normalizer import Normalizer
+
 from helpers import constants
+from modules.text_processing.Normalizer import Normalizer
+from modules.text_processing.Stemmer import Stemmer
+from modules.text_processing.Stopword import Stopword
+
 
 class QueryCompletion:
 

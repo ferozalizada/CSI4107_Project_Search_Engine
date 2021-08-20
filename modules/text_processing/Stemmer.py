@@ -1,5 +1,4 @@
 # Name in diagram: dictionary building
-from nltk import PorterStemmer
 
 from nltk.stem import PorterStemmer
 

@@ -1,7 +1,4 @@
 # Name in diagram: Lemmatizer building
-from modules.text_processing.Stopword import *
-
-from nltk import PorterStemmer
 
 from nltk.stem import PorterStemmer
 

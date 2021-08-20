@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-from http.server import HTTPServer, BaseHTTPRequestHandler
-from modules.user_interface.UserInterface import UserInterface
-from modules.bigram_model.QueryCompletion import QueryCompletion
 import json
-import os
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+from modules.bigram_model.QueryCompletion import QueryCompletion
+from modules.user_interface.UserInterface import UserInterface
+
 
 ##### CODE ON THIS FILE BASED ON THE FOLLOWING SOURCES #####
 # https://stackoverflow.com/questions/39801718/how-to-run-a-http-server-which-serves-a-specific-path #
