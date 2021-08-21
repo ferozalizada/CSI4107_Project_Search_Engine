@@ -27,6 +27,13 @@ References and examples are included at the end in the modules.
 1. Install BeautifulSoup4 `pip install beautifulsoup4`
 1. Incase of missing `sqlite3.dll` download the file from `https://www.sqlite.org/download.html` copy inside `C:\Users\<user>\Anaconda\DLL`
 
+### Docker Installion
+
+1. Install Docker
+2. run `docker image build -t myapp .`
+3. run `docker run -d -p$PORT:8080 myapp`
+4. goto `http://localhost:8080/`
+
 ### Running the Project
 
 To run the project simply run `main.py` from the root folder and goto `http://localhost:8080/` on your browser.
