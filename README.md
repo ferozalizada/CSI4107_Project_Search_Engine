@@ -10,11 +10,12 @@ Working demo available at: https://nooble.herokuapp.com/
 
 #### Vector Space Model (VSM) Search
 
-With this, you can perform free-text searches like `data science or web development`.
+You can perform free-text searches like `data science` or `bussiness`.
 
 #### Boolean Retrieval Model (BRM) Search
 
-With this, you can perform boolean searches like `operating AND systems or NOT hardware`.
+You can perform boolean searches like using the AND, OR, NOT operators:
+`operating AND systems` or `operating AND systems NOT hardware`.
 
 ### Installation
 
