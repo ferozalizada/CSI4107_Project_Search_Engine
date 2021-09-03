@@ -1,6 +1,6 @@
 # A Boolean and Vector Model System (VSM) based search engine
 
-Currently the search engine only works on a selected list of course summary from uOttawa. 
+Currently the search engine only works on a selected list of course summary from uOttawa.
 
 ### Working demo
 
@@ -8,7 +8,13 @@ Working demo available at: https://nooble.herokuapp.com/
 
 ### How to use
 
-Simply search a course name i.e: ADM1330 and choose the model to search and observe the results
+#### Vector Space Model (VSM) Search
+
+With this, you can perform free-text searches like `data science or web development`.
+
+#### Boolean Retrieval Model (BRM) Search
+
+With this, you can perform boolean searches like `operating AND systems or NOT hardware`.
 
 ### Installation
 
